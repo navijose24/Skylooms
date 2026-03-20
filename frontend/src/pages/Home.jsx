@@ -127,9 +127,6 @@ const Home = () => {
         <div className="flex-col">
             {/* Hero Section */}
             <section className="hero" style={{ backgroundImage: 'url(/hero.png)' }}>
-                <div className="hero-content text-left">
-                    <button className="bg-white text-black px-8 py-2 rounded-full font-semibold hover:bg-gray-100 transition">Explore</button>
-                </div>
             </section>
 
             <div className="container">
