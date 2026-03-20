@@ -128,8 +128,6 @@ const Home = () => {
             {/* Hero Section */}
             <section className="hero" style={{ backgroundImage: 'url(/hero.png)' }}>
                 <div className="hero-content text-left">
-                    <h1 className="text-6xl font-bold mb-4">Visit Johannesburg</h1>
-                    <p className="text-xl text-white/90 mb-6">Explore Johannesburg's vibrant blend of culture, history, art, shopping and nearby wildlife experiences in one dynamic city.</p>
                     <button className="bg-white text-black px-8 py-2 rounded-full font-semibold hover:bg-gray-100 transition">Explore</button>
                 </div>
             </section>

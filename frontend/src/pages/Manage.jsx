@@ -29,22 +29,25 @@ const Manage = () => {
 
             <div className="mt-32 glass-panel p-16 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-sky-500/5 to-transparent pointer-events-none"></div>
-                <div className="relative z-10 flex flex-col md:flex-row justify-between items-end gap-12">
+                <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-12">
                     <div className="max-w-xl">
                         <span className="text-sky-400 font-bold tracking-widest text-xs uppercase mb-4 block">Reservation Check</span>
                         <h2 className="text-4xl font-bold mb-6">Retrieve Your Booking</h2>
                         <p className="text-muted text-lg leading-relaxed">Enter your 6-digit booking reference and surname to manage your upcoming flight details and services.</p>
                     </div>
-                    <div className="flex-1 w-full flex flex-col sm:flex-row gap-6">
-                        <div className="flex-1">
+                    <div className="flex-1 w-full grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div className="flex flex-col">
                             <label className="text-xs font-bold text-muted uppercase mb-3 block opacity-60">Reference Number</label>
-                            <input type="text" placeholder="e.g. SL7H3K" className="input-field w-full" />
+                            <input type="text" placeholder="e.g. SL7H3K" className="input-field" />
                         </div>
-                        <div className="flex-1">
+                        <div className="flex flex-col">
                             <label className="text-xs font-bold text-muted uppercase mb-3 block opacity-60">Last Name</label>
-                            <input type="text" placeholder="as on passport" className="input-field w-full" />
+                            <input type="text" placeholder="as on passport" className="input-field" />
                         </div>
-                        <button className="btn-primary px-12 h-[56px] self-end rounded-xl shadow-lg shadow-sky-500/20">Find Booking</button>
+                        <div className="flex flex-col">
+                            <label className="text-xs font-bold text-muted uppercase mb-3 block opacity-60 hidden sm:block">&nbsp;</label>
+                            <button className="btn-primary w-full h-[56px] rounded-xl shadow-lg shadow-sky-500/20">Find Booking</button>
+                        </div>
                     </div>
                 </div>
             </div>
