@@ -10,7 +10,7 @@ class Airport(models.Model):
         return f"{self.name} ({self.code})"
 
 class Flight(models.Model):
-    flight_number = models.CharField(max_length=10, unique=True)
+    flight_number = models.CharField(max_length=20, unique=True)
     source = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name='departures')
     destination = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name='arrivals')
     departure_time = models.DateTimeField()

@@ -12,6 +12,7 @@ from flights.models import Airport, Flight
 from accommodations.models import Hotel
 from cabs.models import Cab
 from django.conf import settings
+from typing import List, Dict, Any
 
 def load_json(filename):
     # JSON files are in the root directory, while seed.py is in backend
@@ -28,9 +29,9 @@ def run():
 
     # Load data
     print("Loading JSON files...")
-    flights_data = load_json('flight_services.json')
-    hotels_map = load_json('hotels.json')
-    cabs_map = load_json('cab.json')
+    flights_data: List[Dict[str, Any]] = load_json('flight_services.json')
+    hotels_map: Dict[str, List[Dict[str, Any]]] = load_json('hotels.json')
+    cabs_map: Dict[str, List[Dict[str, Any]]] = load_json('cab.json')
 
     now = timezone.now()
     
@@ -74,6 +75,7 @@ def run():
             
             for i, hour in enumerate(departure_hours):
                 # --- OUTBOUND FLIGHT ---
+                f_id_out = f"{f_data['id']}-OUT-{day_offset}-{i}"
                 dep_time_out = timezone.make_aware(datetime.combine(flight_date, datetime.min.time().replace(hour=hour, minute=random.randint(0, 59))))
                 arr_time_out = dep_time_out + timedelta(minutes=duration_mins)
                 
@@ -82,7 +84,7 @@ def run():
                 price_biz = price_econ * 2.5 + random.randint(50, 150)
 
                 Flight.objects.create(
-                    flight_number=f"{f_data['id']}-OUT-{day_offset}-{i}",
+                    flight_number=f_id_out,
                     source=source,
                     destination=dest,
                     departure_time=dep_time_out,
@@ -92,12 +94,13 @@ def run():
                 )
 
                 # --- RETURN FLIGHT ---
+                f_id_ret = f"{f_data['id']}-RET-{day_offset}-{i}"
                 # Return flight starts after outbound arrives, e.g. 4 hours later
                 dep_time_ret = arr_time_out + timedelta(hours=4, minutes=random.randint(0, 59))
                 arr_time_ret = dep_time_ret + timedelta(minutes=duration_mins)
 
                 Flight.objects.create(
-                    flight_number=f"{f_data['id']}-RET-{day_offset}-{i}",
+                    flight_number=f_id_ret,
                     source=dest,
                     destination=source,
                     departure_time=dep_time_ret,
@@ -145,8 +148,9 @@ def run():
     # 3. Seed Hotels
     print("Seeding hotels...")
     for airport_code, hotels_list in hotels_map.items():
-        if airport_code in airport_cache:
-            city = airport_cache[airport_code].city
+        airport = airport_cache.get(airport_code)
+        if airport:
+            city = airport.city
             for h_data in hotels_list:
                 rating = float(h_data.get('rating', 0))
                 # Generate a price based on rating
@@ -167,8 +171,9 @@ def run():
     print("Seeding cabs...")
     drivers = ["John Smith", "Maria Garcia", "David Chen", "Sarah Williams", "Ahmed Hassan", "Elena Popov"]
     for airport_code, cabs_list in cabs_map.items():
-        if airport_code in airport_cache:
-            city = airport_cache[airport_code].city
+        airport = airport_cache.get(airport_code)
+        if airport:
+            city = airport.city
             for c_data in cabs_list:
                 rating = random.uniform(3.5, 5.0)
                 cab_type = 'premium' if float(c_data['farePerKmUsd']) > 3.0 else 'standard'
