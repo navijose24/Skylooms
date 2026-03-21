@@ -51,6 +51,7 @@ python -m venv venv
 source venv/bin/activate
 
 pip install -r requirements.txt
+python manage.py makemigrations{for edits}
 python manage.py migrate
 python seed.py  # Populate initial data
 python manage.py runserver
@@ -58,7 +59,7 @@ python manage.py runserver
 
 ### 3. Frontend Setup
 ```bash
-cd ../frontend
+cd frontend
 npm install
 npm run dev
 ```

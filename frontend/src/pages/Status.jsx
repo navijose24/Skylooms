@@ -65,7 +65,7 @@ const Status = () => {
                                             <Plane size={20}/>
                                         </div>
                                         <div>
-                                            <p className="font-bold text-white tracking-wider">{f.id}</p>
+                                            <p className="font-bold text-main-color tracking-wider">{f.id}</p>
                                             <p className="text-xs text-muted uppercase tracking-widest">{f.type}</p>
                                         </div>
                                     </div>
@@ -81,10 +81,10 @@ const Status = () => {
                                 <div className="flex items-center justify-between gap-12 relative px-4">
                                     <div className="text-left flex-1">
                                         <div className="flex items-baseline gap-2">
-                                            <h3 className="text-5xl font-black text-white tracking-tighter">{f.fromCode}</h3>
+                                            <h3 className="text-5xl font-black text-main-color tracking-tighter">{f.fromCode}</h3>
                                         </div>
                                         <p className="text-muted text-sm mt-1">{f.from}</p>
-                                        <p className="text-xl font-bold mt-4 text-white/90">{f.time}</p>
+                                        <p className="text-xl font-bold mt-4 text-main-color">{f.time}</p>
                                     </div>
 
                                     <div className="flex-1 flex flex-col items-center mt-[-20px]">
@@ -97,10 +97,10 @@ const Status = () => {
 
                                     <div className="text-right flex-1">
                                         <div className="flex items-baseline justify-end gap-2">
-                                            <h3 className="text-5xl font-black text-white tracking-tighter">{f.toCode}</h3>
+                                            <h3 className="text-5xl font-black text-main-color tracking-tighter">{f.toCode}</h3>
                                         </div>
                                         <p className="text-muted text-sm mt-1">{f.to}</p>
-                                        <p className="text-xl font-bold mt-4 text-white/90">{(parseInt(f.time.split(':')[0]) + 2) + ':' + f.time.split(':')[1]}</p>
+                                        <p className="text-xl font-bold mt-4 text-main-color">{(parseInt(f.time.split(':')[0]) + 2) + ':' + f.time.split(':')[1]}</p>
                                     </div>
                                 </div>
                             </div>
@@ -109,15 +109,15 @@ const Status = () => {
                                 <div className="space-y-6">
                                     <div className="flex justify-between text-sm">
                                         <span className="text-muted">Terminal</span>
-                                        <span className="text-white font-bold">B3</span>
+                                        <span className="text-main-color font-bold">B3</span>
                                     </div>
                                     <div className="flex justify-between text-sm">
                                         <span className="text-muted">Gate</span>
-                                        <span className="text-white font-bold">42</span>
+                                        <span className="text-main-color font-bold">42</span>
                                     </div>
                                     <div className="flex justify-between text-sm">
                                         <span className="text-muted">Speed</span>
-                                        <span className="text-white font-bold italic">850 km/h</span>
+                                        <span className="text-main-color font-bold italic">850 km/h</span>
                                     </div>
                                 </div>
                                 <button className="btn-primary w-full mt-8 flex items-center justify-center gap-2 group/btn py-4">

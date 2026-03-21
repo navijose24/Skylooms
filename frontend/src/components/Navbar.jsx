@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Plane, Search, User, Moon, Sun, Menu, X } from 'lucide-react';
+import { Plane, User, Moon, Sun, Menu, X, LogIn, LogOut } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 const Navbar = () => {
+    const { user, logout } = useAuth();
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isProfileOpen, setIsProfileOpen] = useState(false);
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
@@ -22,10 +25,7 @@ const Navbar = () => {
     return (
         <header className="app-header">
             <div className="header-container">
-                <Link to="/" className="nav-logo">
-                    <Plane size={24} className="text-sky-400 transform -rotate-12" />
-                    <span>SKYLOOMS</span>
-                </Link>
+                <Link to="/" className="nav-logo">Skylooms</Link>
 
                 {/* Desktop Navigation */}
                 <nav className="desktop-nav">
@@ -39,8 +39,35 @@ const Navbar = () => {
                     <div onClick={toggleTheme} className="theme-toggle">
                         {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                     </div>
-                    <Search size={20} className="nav-icon" />
-                    <User size={20} className="nav-icon hidden md:block" />
+                    
+                    {!user ? (
+                        <Link to="/login" className="nav-btn-primary flex items-center gap-2">
+                            <LogIn size={18} />
+                            <span className="hidden md:inline">Sign In</span>
+                        </Link>
+                    ) : (
+                        <div className="relative">
+                            <button 
+                                onClick={() => setIsProfileOpen(!isProfileOpen)}
+                                className="flex items-center gap-2 nav-icon"
+                            >
+                                <User size={20} />
+                                <span className="hidden md:inline text-sm font-medium">{user.username}</span>
+                            </button>
+                            
+                            {isProfileOpen && (
+                                <div className="absolute right-0 mt-2 w-48 glass rounded-2xl border border-white/10 shadow-2xl py-2 z-50">
+                                    <Link to="/profile" className="block px-4 py-2 text-sm hover:bg-white/5 transition-colors">Profile Settings</Link>
+                                    <button 
+                                        onClick={logout}
+                                        className="w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-white/5 transition-colors flex items-center gap-2"
+                                    >
+                                        <LogOut size={16} /> Logout
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    )}
                     
                     {/* Mobile Menu Button */}
                     <button className="mobile-menu-btn" onClick={toggleMenu}>

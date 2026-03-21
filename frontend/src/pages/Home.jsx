@@ -51,16 +51,18 @@ const Home = () => {
         try {
             const sourceParam = params.source ? `source=${params.source}&` : '';
             const destParam = params.destination ? `destination=${params.destination}&` : '';
+            const dateParam = params.departureDate ? `date=${params.departureDate}&` : '';
             
             // For Round Trip, we need to fetch both ways
-            const res = await fetch(`http://localhost:8000/api/flights/search/?${sourceParam}${destParam}`);
+            const res = await fetch(`http://localhost:8000/api/flights/search/?${sourceParam}${destParam}${dateParam}`);
             let data = [];
             if (res.ok) {
                 data = await res.json();
             }
 
             if (params.journeyType === 'round_trip' && params.source && params.destination) {
-                const resRet = await fetch(`http://localhost:8000/api/flights/search/?source=${params.destination}&destination=${params.source}`);
+                const returnDateParam = params.returnDate ? `&date=${params.returnDate}` : '';
+                const resRet = await fetch(`http://localhost:8000/api/flights/search/?source=${params.destination}&destination=${params.source}${returnDateParam}`);
                 if (resRet.ok) {
                     const retData = await resRet.json();
                     
@@ -367,7 +369,7 @@ const Home = () => {
                 )}
 
                 {/* Deals Section */}
-                <div className="mt-16 mb-20 text-white">
+                <div className="mt-16 mb-20 text-main-color">
                     <h2 className="text-4xl font-light mb-2">Deals from <span className="font-bold">Johannesburg (OR Tambo), South Africa</span></h2>
                     <p className="text-lg text-white/60 mb-8">Discover where your next journey could take you.</p>
                     
@@ -399,12 +401,12 @@ const Home = () => {
 
                 {/* Results Section */}
                 <div id="results-section" className="mt-12 mb-20 animate-slide-up">
-                    <h2 className="text-3xl font-bold mb-8 text-white">
+                    <h2 className="text-3xl font-bold mb-8 text-main-color">
                         {loading ? 'Searching Flights...' : flights.length > 0 ? 'Available Flights' : 'Find Your Adventure'}
                     </h2>
                     
                     {!loading && flights.length === 0 && searchParams.source && searchParams.destination && (
-                        <div className="glass-panel p-12 text-center text-white/50">
+                        <div className="glass-panel p-12 text-center text-muted">
                             <Plane className="mx-auto mb-4 opacity-20" size={48} />
                             <p className="text-xl">No flights found between these locations. Try a different route or dates.</p>
                         </div>

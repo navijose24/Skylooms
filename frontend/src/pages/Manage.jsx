@@ -1,7 +1,37 @@
-import React from 'react';
-import { Settings, User, CreditCard, Luggage, Coffee, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Settings, User, CreditCard, Luggage, Coffee, Clock, Loader2, AlertCircle } from 'lucide-react';
 
 const Manage = () => {
+    const [reference, setReference] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+
+    const handleFindBooking = async () => {
+        if (!reference || !lastName) {
+            setError('Please fill in both fields');
+            return;
+        }
+        setLoading(true);
+        setError('');
+        try {
+            const res = await fetch(`http://localhost:8000/api/bookings/search/?reference=${reference}&last_name=${lastName}`);
+            if (res.ok) {
+                const data = await res.json();
+                navigate(`/success/${data.id}`);
+            } else {
+                const errData = await res.json();
+                setError(errData.error || 'Booking not found. Please check your details.');
+            }
+        } catch (err) {
+            setError('Unable to reach the server. Please try again later.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <div className="container py-20 animate-slide-up">
             <h1 className="text-5xl font-bold mb-4">Manage Your Booking</h1>
@@ -21,7 +51,7 @@ const Manage = () => {
                         <div className="text-sky-400 mb-8 transform group-hover:scale-110 transition-transform origin-left">
                             {React.cloneElement(item.icon, { size: 32 })}
                         </div>
-                        <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-sky-400 transition-colors">{item.name}</h3>
+                        <h3 className="text-2xl font-bold mb-4 text-main-color group-hover:text-sky-400 transition-colors">{item.name}</h3>
                         <p className="text-muted leading-relaxed text-sm">{item.desc}</p>
                     </div>
                 ))}
@@ -34,19 +64,44 @@ const Manage = () => {
                         <span className="text-sky-400 font-bold tracking-widest text-xs uppercase mb-4 block">Reservation Check</span>
                         <h2 className="text-4xl font-bold mb-6">Retrieve Your Booking</h2>
                         <p className="text-muted text-lg leading-relaxed">Enter your 6-digit booking reference and surname to manage your upcoming flight details and services.</p>
+                        
+                        {error && (
+                            <div className="mt-6 flex items-center gap-2 text-red-400 bg-red-400/10 p-4 rounded-lg animate-shake">
+                                <AlertCircle size={18} />
+                                <span className="text-sm font-semibold">{error}</span>
+                            </div>
+                        )}
                     </div>
-                    <div className="flex-1 w-full grid grid-cols-1 sm:grid-cols-3 gap-6">
-                        <div className="flex flex-col">
+                    
+                    <div className="flex-1 w-full flex flex-col sm:flex-row gap-6 items-end">
+                        <div className="flex flex-col flex-1">
                             <label className="text-xs font-bold text-muted uppercase mb-3 block opacity-60">Reference Number</label>
-                            <input type="text" placeholder="e.g. SL7H3K" className="input-field" />
+                            <input 
+                                type="text" 
+                                placeholder="e.g. SL7H3K" 
+                                className="input-field uppercase"
+                                value={reference}
+                                onChange={(e) => setReference(e.target.value)}
+                            />
                         </div>
-                        <div className="flex flex-col">
+                        <div className="flex flex-col flex-1">
                             <label className="text-xs font-bold text-muted uppercase mb-3 block opacity-60">Last Name</label>
-                            <input type="text" placeholder="as on passport" className="input-field" />
+                            <input 
+                                type="text" 
+                                placeholder="as on passport" 
+                                className="input-field"
+                                value={lastName}
+                                onChange={(e) => setLastName(e.target.value)}
+                            />
                         </div>
-                        <div className="flex flex-col">
-                            <label className="text-xs font-bold text-muted uppercase mb-3 block opacity-60 hidden sm:block">&nbsp;</label>
-                            <button className="btn-primary w-full h-[56px] rounded-xl shadow-lg shadow-sky-500/20">Find Booking</button>
+                        <div className="w-full sm:w-auto">
+                            <button 
+                                className="btn-primary w-full sm:w-[180px] h-[56px] rounded-xl shadow-lg shadow-sky-500/20 flex items-center justify-center gap-2"
+                                onClick={handleFindBooking}
+                                disabled={loading}
+                            >
+                                {loading ? <Loader2 className="animate-spin" /> : 'Find Booking'}
+                            </button>
                         </div>
                     </div>
                 </div>

@@ -18,7 +18,7 @@ const Explore = () => {
                         <div className="text-sky-400 mb-6 group-hover:scale-110 transition-transform origin-left">
                             {item.icon}
                         </div>
-                        <h3 className="text-xl font-bold mb-3 text-white">{item.name}</h3>
+                        <h3 className="text-xl font-bold mb-3 text-main-color">{item.name}</h3>
                         <p className="text-muted text-sm leading-relaxed line-clamp-2">{item.sub}</p>
                     </div>
                 ))}
@@ -39,7 +39,7 @@ const Explore = () => {
                                  <div key={j} className="flex gap-4 items-start group/li">
                                      <div className="mt-1 bg-sky-500/10 p-2 rounded-lg text-sky-400 group-hover/li:bg-sky-500/20 transition-colors">{l.icon}</div>
                                      <div>
-                                         <p className="font-bold text-white text-lg">{l.text}</p>
+                                         <p className="font-bold text-main-color text-lg">{l.text}</p>
                                          <p className="text-sm text-muted">{l.sub}</p>
                                      </div>
                                  </div>
@@ -71,7 +71,7 @@ const Explore = () => {
                                 { icon: <Map size={16}/>, text: 'Gateway to Chobe National Park' },
                                 { icon: <Plane size={16}/>, text: 'Daily Direct Flights from Regional Hubs' }
                              ].map((l, j) => (
-                                 <li key={j} className="flex items-center gap-4 text-white/90">
+                                 <li key={j} className="flex items-center gap-4 text-main-color">
                                      <div className="bg-sky-500/10 p-2 rounded-lg text-sky-400">{l.icon}</div>
                                      <span className="text-lg">{l.text}</span>
                                  </li>

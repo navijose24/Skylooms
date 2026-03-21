@@ -11,6 +11,8 @@ class Passenger(models.Model):
     ]
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
+    email = models.EmailField(null=True, blank=True)
+    passport_number = models.CharField(max_length=20, null=True, blank=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     age = models.IntegerField()
     requires_disability_assistance = models.BooleanField(default=False)
@@ -45,10 +47,22 @@ class Booking(models.Model):
     hotel = models.ForeignKey(Hotel, on_delete=models.SET_NULL, null=True, blank=True)
     cab = models.ForeignKey(Cab, on_delete=models.SET_NULL, null=True, blank=True)
 
+    reference_number = models.CharField(max_length=6, unique=True, null=True, blank=True)
     total_price = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     payment_id = models.CharField(max_length=100, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def save(self, *args, **kwargs):
+        if not self.reference_number:
+            import string
+            import random
+            def generate():
+                return ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+            self.reference_number = generate()
+            while Booking.objects.filter(reference_number=self.reference_number).exists():
+                self.reference_number = generate()
+        super().save(*args, **kwargs)
+
     def __str__(self):
-        return f"Booking {self.id} for {self.user_email}"
+        return f"Booking {self.reference_number} for {self.user_email}"

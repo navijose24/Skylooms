@@ -18,14 +18,26 @@ from django.contrib import admin
 from django.urls import path
 from flights.views import FlightSearch, AirportList
 from accommodations.views import RecommendationsView
-from bookings.views import BookingCreateView, BookingDetailView, download_ticket
+from bookings.views import BookingCreateView, BookingDetailView, BookingSearchView, download_ticket
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+from core.views import RegisterView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/airports/', AirportList.as_view(), name='airport-list'),
     path('api/flights/search/', FlightSearch.as_view(), name='flight-search'),
+    # Existing search
     path('api/recommendations/', RecommendationsView.as_view(), name='recommendations'),
     path('api/bookings/', BookingCreateView.as_view(), name='booking-create'),
+    path('api/bookings/search/', BookingSearchView.as_view(), name='booking-search'),
     path('api/bookings/<int:pk>/', BookingDetailView.as_view(), name='booking-detail'),
     path('api/bookings/<int:pk>/ticket/', download_ticket, name='download-ticket'),
+    
+    # Auth URLs
+    path('api/auth/register/', RegisterView.as_view(), name='register'),
+    path('api/auth/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
