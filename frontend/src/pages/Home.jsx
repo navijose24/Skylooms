@@ -40,22 +40,24 @@ const Home = () => {
         }
     };
 
-    const handleSearch = async (e) => {
-        if (e) e.preventDefault();
+    const handleSearch = async (passedParams = null) => {
+        const params = passedParams || searchParams;
         setLoading(true);
         setIsModalOpen(false);
 
-        const dur = (new Date(searchParams.returnDate) - new Date(searchParams.departureDate)) / (1000 * 3600 * 24);
+        const dur = (new Date(params.returnDate) - new Date(params.departureDate)) / (1000 * 3600 * 24);
         setDurationDays(dur > 0 ? dur : 0);
 
         try {
-            const sourceParam = searchParams.source ? `source=${searchParams.source}&` : '';
-            const destParam = searchParams.destination ? `destination=${searchParams.destination}&` : '';
+            const sourceParam = params.source ? `source=${params.source}&` : '';
+            const destParam = params.destination ? `destination=${params.destination}&` : '';
             const res = await fetch(`http://localhost:8000/api/flights/search/?${sourceParam}${destParam}`);
             if (res.ok) {
                 const data = await res.json();
                 setFlights(data);
-                // Scroll to results
+                if (passedParams) {
+                    setSearchParams(passedParams);
+                }
                 setTimeout(() => {
                     document.getElementById('results-section')?.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
@@ -65,6 +67,15 @@ const Home = () => {
         } finally {
             setLoading(false);
         }
+    };
+
+    const handleDealClick = (destCode) => {
+        const newParams = {
+            ...searchParams,
+            source: 'JNB',
+            destination: destCode
+        };
+        handleSearch(newParams);
     };
 
     const handleSelectFlight = (flight) => {
@@ -132,20 +143,20 @@ const Home = () => {
             <div className="container">
                 {/* Visual Search Card Trigger */}
                 <div className="search-card-container">
-                    <div className="grid md:grid-cols-4 gap-0 border rounded-2xl overflow-hidden cursor-pointer bg-white shadow-xl">
-                        <div className="p-4 border-r hover:bg-gray-50 transition" onClick={() => openStep('SOURCE')}>
+                    <div className="grid md:grid-cols-4 gap-0 rounded-2xl overflow-hidden cursor-pointer glass-panel shadow-xl">
+                        <div className="p-4 border-r hover:bg-white/5 transition" onClick={() => openStep('SOURCE')}>
                             <span className="search-input-label flex items-center gap-1"><Plane size={14}/> Flying From</span>
                             <div className="search-input-value mt-1">{searchParams.source || 'Search airport'}</div>
                         </div>
-                        <div className="p-4 border-r hover:bg-gray-50 transition" onClick={() => openStep('DESTINATION')}>
+                        <div className="p-4 border-r hover:bg-white/5 transition" onClick={() => openStep('DESTINATION')}>
                             <span className="search-input-label flex items-center gap-1"><MapPin size={14}/> Flying To</span>
                             <div className="search-input-value mt-1">{searchParams.destination || 'Destinations'}</div>
                         </div>
-                        <div className="p-4 border-r hover:bg-gray-50 transition" onClick={() => openStep('GUESTS')}>
+                        <div className="p-4 border-r hover:bg-white/5 transition" onClick={() => openStep('GUESTS')}>
                             <span className="search-input-label flex items-center gap-1"><Users size={14}/> Who's Travelling?</span>
                             <div className="search-input-value mt-1">{totalGuests} Guest{totalGuests > 1 ? 's' : ''}, {searchParams.cabinClass}</div>
                         </div>
-                        <div className="p-4 hover:bg-gray-50 transition" onClick={() => openStep('DATES')}>
+                        <div className="p-4 hover:bg-white/5 transition" onClick={() => openStep('DATES')}>
                             <span className="search-input-label flex items-center gap-1"><Calendar size={14}/> Travelling When?</span>
                             <div className="search-input-value mt-1">{searchParams.departureDate || 'Add Dates'}</div>
                         </div>
@@ -154,8 +165,8 @@ const Home = () => {
 
                 {/* MODAL SEARCH FLOW */}
                 {isModalOpen && (
-                    <div className="modal-overlay">
-                        <div className="search-modal">
+                    <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
+                        <div className="search-modal" onClick={(e) => e.stopPropagation()}>
                             <div className="close-overlay" onClick={() => setIsModalOpen(false)}><X size={24}/></div>
                             
                             {/* Modal Header Tabs */}
@@ -329,12 +340,16 @@ const Home = () => {
                     
                     <div className="grid md:grid-cols-4 gap-6">
                         {[
-                            { name: 'Cape Town', price: '75', img: 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=600&q=80', tag: 'Domestic' },
-                            { name: 'London', price: '650', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80', tag: 'International' },
-                            { name: 'Dubai', price: '400', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80', tag: 'Regional' },
-                            { name: 'New York', price: '500', img: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80', tag: 'International' }
+                            { name: 'Cape Town', code: 'CPT', price: '75', img: 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=600&q=80', tag: 'Domestic' },
+                            { name: 'London', code: 'LHR', price: '650', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80', tag: 'International' },
+                            { name: 'Dubai', code: 'DXB', price: '400', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80', tag: 'Regional' },
+                            { name: 'New York', code: 'JFK', price: '500', img: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80', tag: 'International' }
                         ].map(deal => (
-                            <div key={deal.name} className="glass-panel relative overflow-hidden group h-[350px] cursor-pointer">
+                            <div 
+                                key={deal.name} 
+                                className="glass-panel relative overflow-hidden group h-[350px] cursor-pointer"
+                                onClick={() => handleDealClick(deal.code)}
+                            >
                                 <img src={deal.img} alt={deal.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                                 <div className="absolute top-4 left-4">

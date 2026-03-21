@@ -1,0 +1,3130 @@
+{
+  "JFK": [
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 2.8,
+      "baseFareUsd": 14.77,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.53,
+      "baseFareUsd": 4.1,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.4,
+      "baseFareUsd": 3.71,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.0,
+      "baseFareUsd": 13.47,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.37,
+      "baseFareUsd": 4.31,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.51,
+      "baseFareUsd": 8.39,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.56,
+      "baseFareUsd": 14.2,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "LHR": [
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.6,
+      "baseFareUsd": 6.84,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.14,
+      "baseFareUsd": 5.78,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.41,
+      "baseFareUsd": 10.38,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.16,
+      "baseFareUsd": 13.06,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.07,
+      "baseFareUsd": 13.57,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.66,
+      "baseFareUsd": 5.28,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.68,
+      "baseFareUsd": 10.3,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "LAX": [
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 1.81,
+      "baseFareUsd": 13.27,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.56,
+      "baseFareUsd": 12.62,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.45,
+      "baseFareUsd": 12.1,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.85,
+      "baseFareUsd": 3.39,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.71,
+      "baseFareUsd": 7.19,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 4.33,
+      "baseFareUsd": 4.1,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.93,
+      "baseFareUsd": 9.89,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 4.24,
+      "baseFareUsd": 12.26,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 4.42,
+      "baseFareUsd": 8.13,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ],
+  "HND": [
+    {
+      "cabName": "Lyft",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.69,
+      "baseFareUsd": 11.25,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 4.27,
+      "baseFareUsd": 14.26,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.22,
+      "baseFareUsd": 11.48,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 1.85,
+      "baseFareUsd": 10.09,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.49,
+      "baseFareUsd": 12.38,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 4.23,
+      "baseFareUsd": 10.86,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.09,
+      "baseFareUsd": 5.57,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "DXB": [
+    {
+      "cabName": "Uber",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 1.52,
+      "baseFareUsd": 10.07,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.41,
+      "baseFareUsd": 11.33,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.54,
+      "baseFareUsd": 8.17,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.21,
+      "baseFareUsd": 11.36,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.58,
+      "baseFareUsd": 4.91,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.56,
+      "baseFareUsd": 10.73,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.63,
+      "baseFareUsd": 6.5,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.81,
+      "baseFareUsd": 10.29,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ],
+  "SYD": [
+    {
+      "cabName": "Lyft",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 4.42,
+      "baseFareUsd": 11.08,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 4.19,
+      "baseFareUsd": 9.88,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.11,
+      "baseFareUsd": 13.58,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.65,
+      "baseFareUsd": 6.45,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.0,
+      "baseFareUsd": 12.4,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 4.14,
+      "baseFareUsd": 5.87,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.24,
+      "baseFareUsd": 9.11,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.49,
+      "baseFareUsd": 9.3,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "SIN": [
+    {
+      "cabName": "Lyft",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 4.36,
+      "baseFareUsd": 4.23,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.48,
+      "baseFareUsd": 5.13,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.79,
+      "baseFareUsd": 6.99,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 4.2,
+      "baseFareUsd": 7.83,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.07,
+      "baseFareUsd": 13.77,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.62,
+      "baseFareUsd": 14.6,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 3.78,
+      "baseFareUsd": 11.72,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "FRA": [
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 1.25,
+      "baseFareUsd": 13.09,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.86,
+      "baseFareUsd": 8.34,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.0,
+      "baseFareUsd": 7.56,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.73,
+      "baseFareUsd": 13.64,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.35,
+      "baseFareUsd": 8.98,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 2.56,
+      "baseFareUsd": 7.77,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 4.03,
+      "baseFareUsd": 6.44,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ],
+  "BOM": [
+    {
+      "cabName": "Uber",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 1.4,
+      "baseFareUsd": 6.9,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 4.01,
+      "baseFareUsd": 14.0,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.89,
+      "baseFareUsd": 9.33,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 2.08,
+      "baseFareUsd": 14.69,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.22,
+      "baseFareUsd": 9.6,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 2.04,
+      "baseFareUsd": 6.0,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 1.24,
+      "baseFareUsd": 14.93,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 1.22,
+      "baseFareUsd": 6.34,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ],
+  "YYZ": [
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.75,
+      "baseFareUsd": 11.57,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.75,
+      "baseFareUsd": 13.9,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.25,
+      "baseFareUsd": 3.01,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 1.27,
+      "baseFareUsd": 8.81,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 4.36,
+      "baseFareUsd": 12.16,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.9,
+      "baseFareUsd": 6.6,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.37,
+      "baseFareUsd": 13.91,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 4.04,
+      "baseFareUsd": 8.65,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 2.63,
+      "baseFareUsd": 11.8,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "CDG": [
+    {
+      "cabName": "Lyft",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 4.44,
+      "baseFareUsd": 9.31,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.14,
+      "baseFareUsd": 3.02,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.11,
+      "baseFareUsd": 7.93,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.9,
+      "baseFareUsd": 10.61,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 1.83,
+      "baseFareUsd": 3.08,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.1,
+      "baseFareUsd": 4.88,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 4.25,
+      "baseFareUsd": 10.36,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.81,
+      "baseFareUsd": 11.67,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.35,
+      "baseFareUsd": 4.21,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ],
+  "HKG": [
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.46,
+      "baseFareUsd": 10.07,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.13,
+      "baseFareUsd": 8.34,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.31,
+      "baseFareUsd": 6.17,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.67,
+      "baseFareUsd": 10.47,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 2.73,
+      "baseFareUsd": 11.24,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.73,
+      "baseFareUsd": 10.48,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.96,
+      "baseFareUsd": 8.99,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ],
+  "SFO": [
+    {
+      "cabName": "Uber",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.53,
+      "baseFareUsd": 9.33,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.91,
+      "baseFareUsd": 10.87,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.67,
+      "baseFareUsd": 13.45,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.68,
+      "baseFareUsd": 14.12,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 3.04,
+      "baseFareUsd": 12.16,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.41,
+      "baseFareUsd": 7.38,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "AMS": [
+    {
+      "cabName": "Uber",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.43,
+      "baseFareUsd": 13.27,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.52,
+      "baseFareUsd": 12.29,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.0,
+      "baseFareUsd": 6.43,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.47,
+      "baseFareUsd": 3.61,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.37,
+      "baseFareUsd": 4.47,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.24,
+      "baseFareUsd": 9.61,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.27,
+      "baseFareUsd": 10.3,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "DEL": [
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.85,
+      "baseFareUsd": 13.04,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 4.0,
+      "baseFareUsd": 7.18,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.45,
+      "baseFareUsd": 10.66,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.71,
+      "baseFareUsd": 4.23,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 1.26,
+      "baseFareUsd": 6.31,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.8,
+      "baseFareUsd": 11.21,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 4.28,
+      "baseFareUsd": 10.02,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ],
+  "EZE": [
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 4.24,
+      "baseFareUsd": 8.71,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.36,
+      "baseFareUsd": 9.82,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.61,
+      "baseFareUsd": 5.29,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 4.46,
+      "baseFareUsd": 9.37,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.12,
+      "baseFareUsd": 9.88,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.4,
+      "baseFareUsd": 10.81,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 2.25,
+      "baseFareUsd": 11.79,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "MAD": [
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.89,
+      "baseFareUsd": 14.35,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 1.44,
+      "baseFareUsd": 11.3,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 1.75,
+      "baseFareUsd": 9.97,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.34,
+      "baseFareUsd": 7.92,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.04,
+      "baseFareUsd": 13.46,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 4.08,
+      "baseFareUsd": 13.68,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.0,
+      "baseFareUsd": 14.11,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "JNB": [
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.92,
+      "baseFareUsd": 14.28,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.57,
+      "baseFareUsd": 7.33,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.03,
+      "baseFareUsd": 10.38,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.39,
+      "baseFareUsd": 14.36,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 4.19,
+      "baseFareUsd": 8.3,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 4.42,
+      "baseFareUsd": 3.29,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "ICN": [
+    {
+      "cabName": "Lyft",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.25,
+      "baseFareUsd": 10.67,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.52,
+      "baseFareUsd": 10.73,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.19,
+      "baseFareUsd": 9.15,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.43,
+      "baseFareUsd": 7.62,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 1.65,
+      "baseFareUsd": 10.24,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.9,
+      "baseFareUsd": 4.48,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "SEA": [
+    {
+      "cabName": "Airport Express",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.49,
+      "baseFareUsd": 11.03,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 4.29,
+      "baseFareUsd": 12.48,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.1,
+      "baseFareUsd": 11.09,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.81,
+      "baseFareUsd": 12.84,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.36,
+      "baseFareUsd": 3.1,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.9,
+      "baseFareUsd": 4.79,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "GRU": [
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.38,
+      "baseFareUsd": 7.48,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.29,
+      "baseFareUsd": 10.97,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.25,
+      "baseFareUsd": 12.19,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 1.39,
+      "baseFareUsd": 12.41,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.22,
+      "baseFareUsd": 12.74,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.35,
+      "baseFareUsd": 14.98,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.3,
+      "baseFareUsd": 11.3,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.63,
+      "baseFareUsd": 5.87,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ],
+  "MIA": [
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.36,
+      "baseFareUsd": 11.49,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.85,
+      "baseFareUsd": 3.79,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.8,
+      "baseFareUsd": 12.13,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.83,
+      "baseFareUsd": 7.48,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.84,
+      "baseFareUsd": 4.45,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.27,
+      "baseFareUsd": 5.51,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 1.58,
+      "baseFareUsd": 12.35,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ],
+  "BKK": [
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.45,
+      "baseFareUsd": 14.81,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 4.06,
+      "baseFareUsd": 5.23,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.15,
+      "baseFareUsd": 13.6,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.64,
+      "baseFareUsd": 4.2,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.28,
+      "baseFareUsd": 8.58,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.92,
+      "baseFareUsd": 8.67,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.91,
+      "baseFareUsd": 4.68,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.41,
+      "baseFareUsd": 7.47,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.22,
+      "baseFareUsd": 8.67,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "MEL": [
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.54,
+      "baseFareUsd": 5.51,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.13,
+      "baseFareUsd": 10.74,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.68,
+      "baseFareUsd": 13.1,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 4.41,
+      "baseFareUsd": 14.7,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.19,
+      "baseFareUsd": 6.72,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 3.97,
+      "baseFareUsd": 12.29,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.36,
+      "baseFareUsd": 14.76,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ],
+  "DOH": [
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.7,
+      "baseFareUsd": 11.58,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.89,
+      "baseFareUsd": 3.48,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.62,
+      "baseFareUsd": 5.56,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.46,
+      "baseFareUsd": 14.08,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.85,
+      "baseFareUsd": 7.19,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.14,
+      "baseFareUsd": 5.55,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 2.72,
+      "baseFareUsd": 13.44,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.77,
+      "baseFareUsd": 7.01,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "YVR": [
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.29,
+      "baseFareUsd": 8.36,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.96,
+      "baseFareUsd": 4.54,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.99,
+      "baseFareUsd": 10.75,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.83,
+      "baseFareUsd": 10.74,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.64,
+      "baseFareUsd": 11.9,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 2.86,
+      "baseFareUsd": 3.3,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.08,
+      "baseFareUsd": 10.37,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "NRT": [
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.66,
+      "baseFareUsd": 3.99,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.35,
+      "baseFareUsd": 3.01,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 1.94,
+      "baseFareUsd": 13.34,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.28,
+      "baseFareUsd": 4.75,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.67,
+      "baseFareUsd": 6.78,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 4.33,
+      "baseFareUsd": 9.49,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 2.35,
+      "baseFareUsd": 11.23,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.75,
+      "baseFareUsd": 10.37,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.64,
+      "baseFareUsd": 5.04,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ],
+  "MEX": [
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.57,
+      "baseFareUsd": 8.12,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 3.05,
+      "baseFareUsd": 11.86,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 1.9,
+      "baseFareUsd": 11.35,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.85,
+      "baseFareUsd": 6.52,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.36,
+      "baseFareUsd": 3.72,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.46,
+      "baseFareUsd": 4.47,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.58,
+      "baseFareUsd": 7.38,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "BOG": [
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.23,
+      "baseFareUsd": 9.34,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.16,
+      "baseFareUsd": 4.22,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.31,
+      "baseFareUsd": 9.46,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.71,
+      "baseFareUsd": 3.9,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 2.76,
+      "baseFareUsd": 4.31,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 4.21,
+      "baseFareUsd": 8.63,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 4.11,
+      "baseFareUsd": 10.94,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "IST": [
+    {
+      "cabName": "Uber",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.2,
+      "baseFareUsd": 4.9,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.66,
+      "baseFareUsd": 4.65,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 1.94,
+      "baseFareUsd": 8.31,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.24,
+      "baseFareUsd": 11.96,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.68,
+      "baseFareUsd": 7.82,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.15,
+      "baseFareUsd": 6.37,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.45,
+      "baseFareUsd": 7.8,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 1.32,
+      "baseFareUsd": 10.86,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ],
+  "KUL": [
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.77,
+      "baseFareUsd": 3.22,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 1.51,
+      "baseFareUsd": 6.28,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 1.42,
+      "baseFareUsd": 4.5,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.85,
+      "baseFareUsd": 4.07,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.95,
+      "baseFareUsd": 5.98,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 1.49,
+      "baseFareUsd": 13.87,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.31,
+      "baseFareUsd": 3.87,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.16,
+      "baseFareUsd": 4.8,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "ORD": [
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 1.58,
+      "baseFareUsd": 6.38,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 2.65,
+      "baseFareUsd": 11.36,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Lyft",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.3,
+      "baseFareUsd": 11.76,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.43,
+      "baseFareUsd": 9.17,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.58,
+      "baseFareUsd": 3.79,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.2,
+      "baseFareUsd": 10.99,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 4.21,
+      "baseFareUsd": 6.1,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 1.54,
+      "baseFareUsd": 7.84,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.82,
+      "baseFareUsd": 7.45,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ],
+  "FCO": [
+    {
+      "cabName": "Lyft",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 4.35,
+      "baseFareUsd": 9.93,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.59,
+      "baseFareUsd": 13.77,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.35,
+      "baseFareUsd": 3.37,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Local City Taxi",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.45,
+      "baseFareUsd": 10.69,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.13,
+      "baseFareUsd": 13.15,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.46,
+      "baseFareUsd": 10.97,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 4.25,
+      "baseFareUsd": 14.71,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Petrol",
+      "farePerKmUsd": 3.44,
+      "baseFareUsd": 12.99,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 2.48,
+      "baseFareUsd": 9.24,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    }
+  ],
+  "PEK": [
+    {
+      "cabName": "QuickCab",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 3.42,
+      "baseFareUsd": 9.36,
+      "maxPassengers": 6,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "BlueLine Cabs",
+      "fuelType": "Diesel",
+      "farePerKmUsd": 4.48,
+      "baseFareUsd": 7.67,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "EcoRides",
+      "fuelType": "EV",
+      "farePerKmUsd": 2.76,
+      "baseFareUsd": 14.34,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Uber",
+      "fuelType": "EV",
+      "farePerKmUsd": 3.27,
+      "baseFareUsd": 9.78,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "GreenGo EV",
+      "fuelType": "EV",
+      "farePerKmUsd": 4.32,
+      "baseFareUsd": 9.05,
+      "maxPassengers": 7,
+      "features": {
+        "freeWifi": true,
+        "acAvailable": true,
+        "luggageCapacity": "Large"
+      }
+    },
+    {
+      "cabName": "Premium Transfers",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 1.31,
+      "baseFareUsd": 14.2,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    },
+    {
+      "cabName": "Airport Express",
+      "fuelType": "Hybrid",
+      "farePerKmUsd": 2.24,
+      "baseFareUsd": 11.02,
+      "maxPassengers": 4,
+      "features": {
+        "freeWifi": false,
+        "acAvailable": true,
+        "luggageCapacity": "Medium"
+      }
+    }
+  ]
+}

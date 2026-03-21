@@ -1,0 +1,362 @@
+[
+  {
+    "id": "FL-001",
+    "origin": {
+      "airportCode": "JFK",
+      "city": "New York",
+      "country": "USA"
+    },
+    "destination": {
+      "airportCode": "LHR",
+      "city": "London",
+      "country": "UK"
+    },
+    "distanceKm": 5540,
+    "flightDurationMinutes": 420,
+    "weeklyFrequency": 14,
+    "capacityFullness": "95%",
+    "schedule": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+  },
+  {
+    "id": "FL-002",
+    "origin": {
+      "airportCode": "LAX",
+      "city": "Los Angeles",
+      "country": "USA"
+    },
+    "destination": {
+      "airportCode": "HND",
+      "city": "Tokyo",
+      "country": "Japan"
+    },
+    "distanceKm": 8815,
+    "flightDurationMinutes": 690,
+    "weeklyFrequency": 7,
+    "capacityFullness": "92%",
+    "schedule": ["Monday", "Wednesday", "Friday", "Sunday"]
+  },
+  {
+    "id": "FL-003",
+    "origin": {
+      "airportCode": "DXB",
+      "city": "Dubai",
+      "country": "UAE"
+    },
+    "destination": {
+      "airportCode": "LHR",
+      "city": "London",
+      "country": "UK"
+    },
+    "distanceKm": 5480,
+    "flightDurationMinutes": 440,
+    "weeklyFrequency": 21,
+    "capacityFullness": "98%",
+    "schedule": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+  },
+  {
+    "id": "FL-004",
+    "origin": {
+      "airportCode": "SYD",
+      "city": "Sydney",
+      "country": "Australia"
+    },
+    "destination": {
+      "airportCode": "LAX",
+      "city": "Los Angeles",
+      "country": "USA"
+    },
+    "distanceKm": 12060,
+    "flightDurationMinutes": 830,
+    "weeklyFrequency": 7,
+    "capacityFullness": "89%",
+    "schedule": ["Tuesday", "Thursday", "Saturday"]
+  },
+  {
+    "id": "FL-005",
+    "origin": {
+      "airportCode": "SIN",
+      "city": "Singapore",
+      "country": "Singapore"
+    },
+    "destination": {
+      "airportCode": "FRA",
+      "city": "Frankfurt",
+      "country": "Germany"
+    },
+    "distanceKm": 10280,
+    "flightDurationMinutes": 780,
+    "weeklyFrequency": 7,
+    "capacityFullness": "91%",
+    "schedule": ["Monday", "Wednesday", "Friday", "Sunday"]
+  },
+  {
+    "id": "FL-006",
+    "origin": {
+      "airportCode": "BOM",
+      "city": "Mumbai",
+      "country": "India"
+    },
+    "destination": {
+      "airportCode": "JFK",
+      "city": "New York",
+      "country": "USA"
+    },
+    "distanceKm": 12530,
+    "flightDurationMinutes": 960,
+    "weeklyFrequency": 7,
+    "capacityFullness": "96%",
+    "schedule": ["Tuesday", "Thursday", "Saturday", "Sunday"]
+  },
+  {
+    "id": "FL-007",
+    "origin": {
+      "airportCode": "YYZ",
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "destination": {
+      "airportCode": "CDG",
+      "city": "Paris",
+      "country": "France"
+    },
+    "distanceKm": 6000,
+    "flightDurationMinutes": 450,
+    "weeklyFrequency": 14,
+    "capacityFullness": "88%",
+    "schedule": ["Monday", "Wednesday", "Thursday", "Saturday"]
+  },
+  {
+    "id": "FL-008",
+    "origin": {
+      "airportCode": "HKG",
+      "city": "Hong Kong",
+      "country": "Hong Kong"
+    },
+    "destination": {
+      "airportCode": "SFO",
+      "city": "San Francisco",
+      "country": "USA"
+    },
+    "distanceKm": 11100,
+    "flightDurationMinutes": 740,
+    "weeklyFrequency": 7,
+    "capacityFullness": "90%",
+    "schedule": ["Monday", "Tuesday", "Thursday", "Saturday"]
+  },
+  {
+    "id": "FL-009",
+    "origin": {
+      "airportCode": "AMS",
+      "city": "Amsterdam",
+      "country": "Netherlands"
+    },
+    "destination": {
+      "airportCode": "DEL",
+      "city": "New Delhi",
+      "country": "India"
+    },
+    "distanceKm": 6360,
+    "flightDurationMinutes": 460,
+    "weeklyFrequency": 7,
+    "capacityFullness": "93%",
+    "schedule": ["Tuesday", "Thursday", "Friday", "Sunday"]
+  },
+  {
+    "id": "FL-010",
+    "origin": {
+      "airportCode": "EZE",
+      "city": "Buenos Aires",
+      "country": "Argentina"
+    },
+    "destination": {
+      "airportCode": "MAD",
+      "city": "Madrid",
+      "country": "Spain"
+    },
+    "distanceKm": 10050,
+    "flightDurationMinutes": 710,
+    "weeklyFrequency": 7,
+    "capacityFullness": "94%",
+    "schedule": ["Monday", "Wednesday", "Friday", "Sunday"]
+  },
+  {
+    "id": "FL-011",
+    "origin": {
+      "airportCode": "JNB",
+      "city": "Johannesburg",
+      "country": "South Africa"
+    },
+    "destination": {
+      "airportCode": "LHR",
+      "city": "London",
+      "country": "UK"
+    },
+    "distanceKm": 9020,
+    "flightDurationMinutes": 660,
+    "weeklyFrequency": 14,
+    "capacityFullness": "87%",
+    "schedule": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+  },
+  {
+    "id": "FL-012",
+    "origin": {
+      "airportCode": "ICN",
+      "city": "Seoul",
+      "country": "South Korea"
+    },
+    "destination": {
+      "airportCode": "SEA",
+      "city": "Seattle",
+      "country": "USA"
+    },
+    "distanceKm": 8350,
+    "flightDurationMinutes": 600,
+    "weeklyFrequency": 7,
+    "capacityFullness": "89%",
+    "schedule": ["Tuesday", "Thursday", "Saturday", "Sunday"]
+  },
+  {
+    "id": "FL-013",
+    "origin": {
+      "airportCode": "GRU",
+      "city": "Sao Paulo",
+      "country": "Brazil"
+    },
+    "destination": {
+      "airportCode": "MIA",
+      "city": "Miami",
+      "country": "USA"
+    },
+    "distanceKm": 6550,
+    "flightDurationMinutes": 480,
+    "weeklyFrequency": 14,
+    "capacityFullness": "92%",
+    "schedule": ["Monday", "Tuesday", "Wednesday", "Friday", "Saturday"]
+  },
+  {
+    "id": "FL-014",
+    "origin": {
+      "airportCode": "BKK",
+      "city": "Bangkok",
+      "country": "Thailand"
+    },
+    "destination": {
+      "airportCode": "LHR",
+      "city": "London",
+      "country": "UK"
+    },
+    "distanceKm": 9530,
+    "flightDurationMinutes": 710,
+    "weeklyFrequency": 7,
+    "capacityFullness": "96%",
+    "schedule": ["Tuesday", "Thursday", "Saturday"]
+  },
+  {
+    "id": "FL-015",
+    "origin": {
+      "airportCode": "MEL",
+      "city": "Melbourne",
+      "country": "Australia"
+    },
+    "destination": {
+      "airportCode": "DOH",
+      "city": "Doha",
+      "country": "Qatar"
+    },
+    "distanceKm": 11960,
+    "flightDurationMinutes": 850,
+    "weeklyFrequency": 14,
+    "capacityFullness": "91%",
+    "schedule": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+  },
+  {
+    "id": "FL-016",
+    "origin": {
+      "airportCode": "YVR",
+      "city": "Vancouver",
+      "country": "Canada"
+    },
+    "destination": {
+      "airportCode": "NRT",
+      "city": "Tokyo",
+      "country": "Japan"
+    },
+    "distanceKm": 7540,
+    "flightDurationMinutes": 550,
+    "weeklyFrequency": 7,
+    "capacityFullness": "88%",
+    "schedule": ["Monday", "Wednesday", "Friday", "Sunday"]
+  },
+  {
+    "id": "FL-017",
+    "origin": {
+      "airportCode": "MEX",
+      "city": "Mexico City",
+      "country": "Mexico"
+    },
+    "destination": {
+      "airportCode": "BOG",
+      "city": "Bogota",
+      "country": "Colombia"
+    },
+    "distanceKm": 3160,
+    "flightDurationMinutes": 290,
+    "weeklyFrequency": 7,
+    "capacityFullness": "94%",
+    "schedule": ["Tuesday", "Thursday", "Saturday"]
+  },
+  {
+    "id": "FL-018",
+    "origin": {
+      "airportCode": "IST",
+      "city": "Istanbul",
+      "country": "Turkey"
+    },
+    "destination": {
+      "airportCode": "KUL",
+      "city": "Kuala Lumpur",
+      "country": "Malaysia"
+    },
+    "distanceKm": 8380,
+    "flightDurationMinutes": 600,
+    "weeklyFrequency": 7,
+    "capacityFullness": "89%",
+    "schedule": ["Monday", "Wednesday", "Friday", "Sunday"]
+  },
+  {
+    "id": "FL-019",
+    "origin": {
+      "airportCode": "ORD",
+      "city": "Chicago",
+      "country": "USA"
+    },
+    "destination": {
+      "airportCode": "FCO",
+      "city": "Rome",
+      "country": "Italy"
+    },
+    "distanceKm": 7750,
+    "flightDurationMinutes": 550,
+    "weeklyFrequency": 7,
+    "capacityFullness": "90%",
+    "schedule": ["Tuesday", "Thursday", "Saturday"]
+  },
+  {
+    "id": "FL-020",
+    "origin": {
+      "airportCode": "PEK",
+      "city": "Beijing",
+      "country": "China"
+    },
+    "destination": {
+      "airportCode": "YYZ",
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "distanceKm": 10580,
+    "flightDurationMinutes": 780,
+    "weeklyFrequency": 7,
+    "capacityFullness": "92%",
+    "schedule": ["Monday", "Wednesday", "Friday", "Sunday"]
+  }
+]

@@ -1,0 +1,1600 @@
+{
+  "JFK": [
+    {
+      "name": "TWA Hotel",
+      "distanceFromAirportKm": 0.1,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "American",
+        "Cocktails"
+      ]
+    },
+    {
+      "name": "ibis JFK Airport",
+      "distanceFromAirportKm": 13.0,
+      "rating": 3.7,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    },
+    {
+      "name": "Novotel JFK Airport",
+      "distanceFromAirportKm": 14.0,
+      "rating": 4.0,
+      "cuisinePreferences": [
+        "Seafood",
+        "International"
+      ]
+    },
+    {
+      "name": "Crowne Plaza JFK Airport",
+      "distanceFromAirportKm": 4.9,
+      "rating": 4.4,
+      "cuisinePreferences": [
+        "Seafood",
+        "International"
+      ]
+    },
+    {
+      "name": "Marriott JFK Airport",
+      "distanceFromAirportKm": 1.5,
+      "rating": 3.8,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    }
+  ],
+  "LHR": [
+    {
+      "name": "Sofitel London Heathrow",
+      "distanceFromAirportKm": 0.2,
+      "rating": 4.5,
+      "cuisinePreferences": [
+        "French",
+        "International"
+      ]
+    },
+    {
+      "name": "Holiday Inn LHR Airport",
+      "distanceFromAirportKm": 8.7,
+      "rating": 3.7,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "InterContinental LHR Airport",
+      "distanceFromAirportKm": 14.5,
+      "rating": 4.5,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    },
+    {
+      "name": "Novotel LHR Airport",
+      "distanceFromAirportKm": 2.5,
+      "rating": 4.7,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Radisson LHR Airport",
+      "distanceFromAirportKm": 1.7,
+      "rating": 3.6,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    }
+  ],
+  "LAX": [
+    {
+      "name": "Sheraton LAX Airport",
+      "distanceFromAirportKm": 12.9,
+      "rating": 4.7,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Hilton LAX Airport",
+      "distanceFromAirportKm": 2.1,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Radisson LAX Airport",
+      "distanceFromAirportKm": 10.3,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    },
+    {
+      "name": "Holiday Inn LAX Airport",
+      "distanceFromAirportKm": 7.2,
+      "rating": 3.8,
+      "cuisinePreferences": [
+        "Seafood",
+        "International"
+      ]
+    },
+    {
+      "name": "Hyatt LAX Airport",
+      "distanceFromAirportKm": 5.9,
+      "rating": 4.2,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    }
+  ],
+  "HND": [
+    {
+      "name": "Hyatt HND Airport",
+      "distanceFromAirportKm": 13.8,
+      "rating": 3.8,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Radisson HND Airport",
+      "distanceFromAirportKm": 13.7,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Novotel HND Airport",
+      "distanceFromAirportKm": 0.6,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    },
+    {
+      "name": "Crowne Plaza HND Airport",
+      "distanceFromAirportKm": 10.7,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Holiday Inn HND Airport",
+      "distanceFromAirportKm": 11.2,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    }
+  ],
+  "DXB": [
+    {
+      "name": "Dubai International Hotel",
+      "distanceFromAirportKm": 0.1,
+      "rating": 4.7,
+      "cuisinePreferences": [
+        "Middle Eastern",
+        "Global"
+      ]
+    },
+    {
+      "name": "Hilton DXB Airport",
+      "distanceFromAirportKm": 4.1,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Crowne Plaza DXB Airport",
+      "distanceFromAirportKm": 10.5,
+      "rating": 4.0,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Novotel DXB Airport",
+      "distanceFromAirportKm": 3.0,
+      "rating": 4.5,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "Radisson DXB Airport",
+      "distanceFromAirportKm": 0.5,
+      "rating": 4.0,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    }
+  ],
+  "SYD": [
+    {
+      "name": "Marriott SYD Airport",
+      "distanceFromAirportKm": 13.6,
+      "rating": 4.0,
+      "cuisinePreferences": [
+        "Seafood",
+        "International"
+      ]
+    },
+    {
+      "name": "Hilton SYD Airport",
+      "distanceFromAirportKm": 12.9,
+      "rating": 4.5,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Hyatt SYD Airport",
+      "distanceFromAirportKm": 2.7,
+      "rating": 3.6,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    },
+    {
+      "name": "Sheraton SYD Airport",
+      "distanceFromAirportKm": 2.1,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    },
+    {
+      "name": "Novotel SYD Airport",
+      "distanceFromAirportKm": 1.9,
+      "rating": 3.8,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    }
+  ],
+  "SIN": [
+    {
+      "name": "Crowne Plaza Changi Airport",
+      "distanceFromAirportKm": 0.1,
+      "rating": 4.8,
+      "cuisinePreferences": [
+        "Asian",
+        "International"
+      ]
+    },
+    {
+      "name": "Radisson SIN Airport",
+      "distanceFromAirportKm": 3.1,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Marriott SIN Airport",
+      "distanceFromAirportKm": 5.5,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "InterContinental SIN Airport",
+      "distanceFromAirportKm": 2.9,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Continental",
+        "American"
+      ]
+    },
+    {
+      "name": "ibis SIN Airport",
+      "distanceFromAirportKm": 11.1,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    }
+  ],
+  "FRA": [
+    {
+      "name": "InterContinental FRA Airport",
+      "distanceFromAirportKm": 14.3,
+      "rating": 4.7,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Marriott FRA Airport",
+      "distanceFromAirportKm": 4.0,
+      "rating": 4.9,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "Holiday Inn FRA Airport",
+      "distanceFromAirportKm": 2.6,
+      "rating": 4.5,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Radisson FRA Airport",
+      "distanceFromAirportKm": 11.8,
+      "rating": 4.1,
+      "cuisinePreferences": [
+        "Seafood",
+        "International"
+      ]
+    },
+    {
+      "name": "Sheraton FRA Airport",
+      "distanceFromAirportKm": 8.3,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    }
+  ],
+  "BOM": [
+    {
+      "name": "Sheraton BOM Airport",
+      "distanceFromAirportKm": 4.0,
+      "rating": 4.8,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Crowne Plaza BOM Airport",
+      "distanceFromAirportKm": 7.5,
+      "rating": 3.8,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Hilton BOM Airport",
+      "distanceFromAirportKm": 8.6,
+      "rating": 4.8,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Radisson BOM Airport",
+      "distanceFromAirportKm": 4.3,
+      "rating": 4.0,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Novotel BOM Airport",
+      "distanceFromAirportKm": 10.2,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    }
+  ],
+  "YYZ": [
+    {
+      "name": "Novotel YYZ Airport",
+      "distanceFromAirportKm": 10.3,
+      "rating": 4.9,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Sheraton YYZ Airport",
+      "distanceFromAirportKm": 0.5,
+      "rating": 3.6,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "ibis YYZ Airport",
+      "distanceFromAirportKm": 12.6,
+      "rating": 4.9,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Radisson YYZ Airport",
+      "distanceFromAirportKm": 13.7,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "InterContinental YYZ Airport",
+      "distanceFromAirportKm": 6.9,
+      "rating": 3.8,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    }
+  ],
+  "CDG": [
+    {
+      "name": "Crowne Plaza CDG Airport",
+      "distanceFromAirportKm": 13.6,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Hyatt CDG Airport",
+      "distanceFromAirportKm": 3.0,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "Novotel CDG Airport",
+      "distanceFromAirportKm": 3.6,
+      "rating": 3.5,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    },
+    {
+      "name": "Holiday Inn CDG Airport",
+      "distanceFromAirportKm": 10.2,
+      "rating": 4.7,
+      "cuisinePreferences": [
+        "Continental",
+        "American"
+      ]
+    },
+    {
+      "name": "Sheraton CDG Airport",
+      "distanceFromAirportKm": 7.5,
+      "rating": 4.1,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    }
+  ],
+  "HKG": [
+    {
+      "name": "Crowne Plaza HKG Airport",
+      "distanceFromAirportKm": 14.4,
+      "rating": 4.0,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    },
+    {
+      "name": "Radisson HKG Airport",
+      "distanceFromAirportKm": 13.3,
+      "rating": 4.8,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "InterContinental HKG Airport",
+      "distanceFromAirportKm": 3.7,
+      "rating": 3.6,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    },
+    {
+      "name": "Hilton HKG Airport",
+      "distanceFromAirportKm": 7.6,
+      "rating": 4.9,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "ibis HKG Airport",
+      "distanceFromAirportKm": 1.9,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    }
+  ],
+  "SFO": [
+    {
+      "name": "Sheraton SFO Airport",
+      "distanceFromAirportKm": 14.6,
+      "rating": 3.7,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "Marriott SFO Airport",
+      "distanceFromAirportKm": 14.6,
+      "rating": 4.5,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    },
+    {
+      "name": "Hilton SFO Airport",
+      "distanceFromAirportKm": 12.0,
+      "rating": 4.2,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    },
+    {
+      "name": "Hyatt SFO Airport",
+      "distanceFromAirportKm": 13.0,
+      "rating": 4.5,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    },
+    {
+      "name": "Holiday Inn SFO Airport",
+      "distanceFromAirportKm": 1.6,
+      "rating": 4.5,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    }
+  ],
+  "AMS": [
+    {
+      "name": "Marriott AMS Airport",
+      "distanceFromAirportKm": 3.1,
+      "rating": 4.4,
+      "cuisinePreferences": [
+        "Seafood",
+        "International"
+      ]
+    },
+    {
+      "name": "Crowne Plaza AMS Airport",
+      "distanceFromAirportKm": 4.8,
+      "rating": 3.6,
+      "cuisinePreferences": [
+        "Continental",
+        "American"
+      ]
+    },
+    {
+      "name": "Hilton AMS Airport",
+      "distanceFromAirportKm": 7.7,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Sheraton AMS Airport",
+      "distanceFromAirportKm": 10.0,
+      "rating": 3.6,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "ibis AMS Airport",
+      "distanceFromAirportKm": 14.0,
+      "rating": 4.2,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    }
+  ],
+  "DEL": [
+    {
+      "name": "Radisson DEL Airport",
+      "distanceFromAirportKm": 1.6,
+      "rating": 4.1,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Crowne Plaza DEL Airport",
+      "distanceFromAirportKm": 2.2,
+      "rating": 3.8,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "Holiday Inn DEL Airport",
+      "distanceFromAirportKm": 0.9,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "InterContinental DEL Airport",
+      "distanceFromAirportKm": 14.9,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    },
+    {
+      "name": "Hilton DEL Airport",
+      "distanceFromAirportKm": 5.5,
+      "rating": 3.7,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    }
+  ],
+  "EZE": [
+    {
+      "name": "InterContinental EZE Airport",
+      "distanceFromAirportKm": 10.8,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Hilton EZE Airport",
+      "distanceFromAirportKm": 1.1,
+      "rating": 4.0,
+      "cuisinePreferences": [
+        "Seafood",
+        "International"
+      ]
+    },
+    {
+      "name": "Sheraton EZE Airport",
+      "distanceFromAirportKm": 2.4,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Holiday Inn EZE Airport",
+      "distanceFromAirportKm": 8.1,
+      "rating": 3.8,
+      "cuisinePreferences": [
+        "Continental",
+        "American"
+      ]
+    },
+    {
+      "name": "Crowne Plaza EZE Airport",
+      "distanceFromAirportKm": 2.9,
+      "rating": 4.9,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    }
+  ],
+  "MAD": [
+    {
+      "name": "Hyatt MAD Airport",
+      "distanceFromAirportKm": 10.4,
+      "rating": 4.2,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    },
+    {
+      "name": "InterContinental MAD Airport",
+      "distanceFromAirportKm": 5.2,
+      "rating": 4.0,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "Crowne Plaza MAD Airport",
+      "distanceFromAirportKm": 12.3,
+      "rating": 4.8,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "Novotel MAD Airport",
+      "distanceFromAirportKm": 6.2,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Seafood",
+        "International"
+      ]
+    },
+    {
+      "name": "Radisson MAD Airport",
+      "distanceFromAirportKm": 7.7,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    }
+  ],
+  "JNB": [
+    {
+      "name": "Marriott JNB Airport",
+      "distanceFromAirportKm": 6.0,
+      "rating": 4.0,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    },
+    {
+      "name": "ibis JNB Airport",
+      "distanceFromAirportKm": 1.9,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Novotel JNB Airport",
+      "distanceFromAirportKm": 0.7,
+      "rating": 4.7,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    },
+    {
+      "name": "InterContinental JNB Airport",
+      "distanceFromAirportKm": 10.0,
+      "rating": 4.4,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "Radisson JNB Airport",
+      "distanceFromAirportKm": 14.4,
+      "rating": 4.9,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    }
+  ],
+  "ICN": [
+    {
+      "name": "Hyatt ICN Airport",
+      "distanceFromAirportKm": 8.5,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Crowne Plaza ICN Airport",
+      "distanceFromAirportKm": 7.4,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Sheraton ICN Airport",
+      "distanceFromAirportKm": 1.9,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    },
+    {
+      "name": "Hilton ICN Airport",
+      "distanceFromAirportKm": 13.8,
+      "rating": 4.1,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    },
+    {
+      "name": "ibis ICN Airport",
+      "distanceFromAirportKm": 6.5,
+      "rating": 4.7,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    }
+  ],
+  "SEA": [
+    {
+      "name": "Crowne Plaza SEA Airport",
+      "distanceFromAirportKm": 11.3,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Continental",
+        "American"
+      ]
+    },
+    {
+      "name": "Holiday Inn SEA Airport",
+      "distanceFromAirportKm": 13.7,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    },
+    {
+      "name": "Radisson SEA Airport",
+      "distanceFromAirportKm": 6.8,
+      "rating": 3.6,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Hilton SEA Airport",
+      "distanceFromAirportKm": 13.5,
+      "rating": 4.5,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "InterContinental SEA Airport",
+      "distanceFromAirportKm": 14.8,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    }
+  ],
+  "GRU": [
+    {
+      "name": "Holiday Inn GRU Airport",
+      "distanceFromAirportKm": 3.2,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    },
+    {
+      "name": "Marriott GRU Airport",
+      "distanceFromAirportKm": 14.2,
+      "rating": 3.8,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Radisson GRU Airport",
+      "distanceFromAirportKm": 2.8,
+      "rating": 4.2,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Hilton GRU Airport",
+      "distanceFromAirportKm": 12.3,
+      "rating": 4.5,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    },
+    {
+      "name": "ibis GRU Airport",
+      "distanceFromAirportKm": 13.2,
+      "rating": 4.8,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    }
+  ],
+  "MIA": [
+    {
+      "name": "InterContinental MIA Airport",
+      "distanceFromAirportKm": 8.8,
+      "rating": 3.7,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Sheraton MIA Airport",
+      "distanceFromAirportKm": 13.0,
+      "rating": 4.4,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    },
+    {
+      "name": "Radisson MIA Airport",
+      "distanceFromAirportKm": 14.2,
+      "rating": 3.6,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "Hyatt MIA Airport",
+      "distanceFromAirportKm": 13.5,
+      "rating": 4.1,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    },
+    {
+      "name": "Hilton MIA Airport",
+      "distanceFromAirportKm": 9.5,
+      "rating": 4.2,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    }
+  ],
+  "BKK": [
+    {
+      "name": "Hyatt BKK Airport",
+      "distanceFromAirportKm": 10.2,
+      "rating": 3.7,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Novotel BKK Airport",
+      "distanceFromAirportKm": 9.9,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "ibis BKK Airport",
+      "distanceFromAirportKm": 14.9,
+      "rating": 4.8,
+      "cuisinePreferences": [
+        "Continental",
+        "American"
+      ]
+    },
+    {
+      "name": "InterContinental BKK Airport",
+      "distanceFromAirportKm": 10.4,
+      "rating": 4.2,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    },
+    {
+      "name": "Hilton BKK Airport",
+      "distanceFromAirportKm": 9.3,
+      "rating": 3.6,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    }
+  ],
+  "MEL": [
+    {
+      "name": "InterContinental MEL Airport",
+      "distanceFromAirportKm": 10.7,
+      "rating": 4.7,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    },
+    {
+      "name": "Marriott MEL Airport",
+      "distanceFromAirportKm": 11.2,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "Radisson MEL Airport",
+      "distanceFromAirportKm": 0.9,
+      "rating": 4.9,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Hyatt MEL Airport",
+      "distanceFromAirportKm": 13.4,
+      "rating": 3.7,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Holiday Inn MEL Airport",
+      "distanceFromAirportKm": 14.2,
+      "rating": 4.2,
+      "cuisinePreferences": [
+        "Continental",
+        "American"
+      ]
+    }
+  ],
+  "DOH": [
+    {
+      "name": "Hyatt DOH Airport",
+      "distanceFromAirportKm": 8.6,
+      "rating": 3.7,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Hilton DOH Airport",
+      "distanceFromAirportKm": 14.4,
+      "rating": 4.8,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Sheraton DOH Airport",
+      "distanceFromAirportKm": 0.7,
+      "rating": 4.4,
+      "cuisinePreferences": [
+        "Seafood",
+        "International"
+      ]
+    },
+    {
+      "name": "Crowne Plaza DOH Airport",
+      "distanceFromAirportKm": 3.8,
+      "rating": 3.6,
+      "cuisinePreferences": [
+        "Seafood",
+        "International"
+      ]
+    },
+    {
+      "name": "Radisson DOH Airport",
+      "distanceFromAirportKm": 8.0,
+      "rating": 4.5,
+      "cuisinePreferences": [
+        "Continental",
+        "American"
+      ]
+    }
+  ],
+  "YVR": [
+    {
+      "name": "InterContinental YVR Airport",
+      "distanceFromAirportKm": 3.7,
+      "rating": 4.8,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Marriott YVR Airport",
+      "distanceFromAirportKm": 9.9,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Sheraton YVR Airport",
+      "distanceFromAirportKm": 3.2,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    },
+    {
+      "name": "Holiday Inn YVR Airport",
+      "distanceFromAirportKm": 4.6,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    },
+    {
+      "name": "Radisson YVR Airport",
+      "distanceFromAirportKm": 5.7,
+      "rating": 4.4,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    }
+  ],
+  "NRT": [
+    {
+      "name": "Holiday Inn NRT Airport",
+      "distanceFromAirportKm": 11.5,
+      "rating": 4.1,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "InterContinental NRT Airport",
+      "distanceFromAirportKm": 11.1,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Seafood",
+        "International"
+      ]
+    },
+    {
+      "name": "Crowne Plaza NRT Airport",
+      "distanceFromAirportKm": 11.6,
+      "rating": 4.7,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    },
+    {
+      "name": "Hyatt NRT Airport",
+      "distanceFromAirportKm": 2.0,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Radisson NRT Airport",
+      "distanceFromAirportKm": 12.4,
+      "rating": 3.5,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    }
+  ],
+  "MEX": [
+    {
+      "name": "Hilton MEX Airport",
+      "distanceFromAirportKm": 2.3,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Sheraton MEX Airport",
+      "distanceFromAirportKm": 5.4,
+      "rating": 3.6,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "InterContinental MEX Airport",
+      "distanceFromAirportKm": 14.0,
+      "rating": 4.5,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Hyatt MEX Airport",
+      "distanceFromAirportKm": 12.3,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Asian Fusion",
+        "Local"
+      ]
+    },
+    {
+      "name": "Crowne Plaza MEX Airport",
+      "distanceFromAirportKm": 9.8,
+      "rating": 3.8,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    }
+  ],
+  "BOG": [
+    {
+      "name": "Novotel BOG Airport",
+      "distanceFromAirportKm": 7.2,
+      "rating": 4.0,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Crowne Plaza BOG Airport",
+      "distanceFromAirportKm": 4.9,
+      "rating": 3.7,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Hilton BOG Airport",
+      "distanceFromAirportKm": 10.0,
+      "rating": 3.6,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "ibis BOG Airport",
+      "distanceFromAirportKm": 13.7,
+      "rating": 4.8,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Sheraton BOG Airport",
+      "distanceFromAirportKm": 9.3,
+      "rating": 3.7,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    }
+  ],
+  "IST": [
+    {
+      "name": "Hilton IST Airport",
+      "distanceFromAirportKm": 3.0,
+      "rating": 4.4,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    },
+    {
+      "name": "Hyatt IST Airport",
+      "distanceFromAirportKm": 13.6,
+      "rating": 4.0,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    },
+    {
+      "name": "Marriott IST Airport",
+      "distanceFromAirportKm": 4.0,
+      "rating": 4.9,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Holiday Inn IST Airport",
+      "distanceFromAirportKm": 12.4,
+      "rating": 3.6,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Novotel IST Airport",
+      "distanceFromAirportKm": 10.6,
+      "rating": 4.5,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    }
+  ],
+  "KUL": [
+    {
+      "name": "Hilton KUL Airport",
+      "distanceFromAirportKm": 14.1,
+      "rating": 4.9,
+      "cuisinePreferences": [
+        "Steakhouse",
+        "Bar"
+      ]
+    },
+    {
+      "name": "ibis KUL Airport",
+      "distanceFromAirportKm": 2.7,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "Sheraton KUL Airport",
+      "distanceFromAirportKm": 5.4,
+      "rating": 3.5,
+      "cuisinePreferences": [
+        "Continental",
+        "American"
+      ]
+    },
+    {
+      "name": "InterContinental KUL Airport",
+      "distanceFromAirportKm": 12.5,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Crowne Plaza KUL Airport",
+      "distanceFromAirportKm": 0.6,
+      "rating": 4.1,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    }
+  ],
+  "ORD": [
+    {
+      "name": "Radisson ORD Airport",
+      "distanceFromAirportKm": 8.6,
+      "rating": 4.7,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    },
+    {
+      "name": "Hilton ORD Airport",
+      "distanceFromAirportKm": 13.5,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    },
+    {
+      "name": "InterContinental ORD Airport",
+      "distanceFromAirportKm": 6.4,
+      "rating": 4.1,
+      "cuisinePreferences": [
+        "Vegan",
+        "Healthy"
+      ]
+    },
+    {
+      "name": "Marriott ORD Airport",
+      "distanceFromAirportKm": 8.5,
+      "rating": 3.8,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Hyatt ORD Airport",
+      "distanceFromAirportKm": 1.1,
+      "rating": 4.6,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    }
+  ],
+  "FCO": [
+    {
+      "name": "Marriott FCO Airport",
+      "distanceFromAirportKm": 0.9,
+      "rating": 4.4,
+      "cuisinePreferences": [
+        "Local",
+        "Cafe"
+      ]
+    },
+    {
+      "name": "Sheraton FCO Airport",
+      "distanceFromAirportKm": 13.1,
+      "rating": 3.7,
+      "cuisinePreferences": [
+        "Continental",
+        "American"
+      ]
+    },
+    {
+      "name": "ibis FCO Airport",
+      "distanceFromAirportKm": 0.6,
+      "rating": 3.9,
+      "cuisinePreferences": [
+        "Mediterranean",
+        "International"
+      ]
+    },
+    {
+      "name": "Holiday Inn FCO Airport",
+      "distanceFromAirportKm": 13.4,
+      "rating": 4.0,
+      "cuisinePreferences": [
+        "Continental",
+        "American"
+      ]
+    },
+    {
+      "name": "Radisson FCO Airport",
+      "distanceFromAirportKm": 5.2,
+      "rating": 4.2,
+      "cuisinePreferences": [
+        "Indian",
+        "Continental"
+      ]
+    }
+  ],
+  "PEK": [
+    {
+      "name": "Hilton PEK Airport",
+      "distanceFromAirportKm": 5.2,
+      "rating": 4.0,
+      "cuisinePreferences": [
+        "Seafood",
+        "International"
+      ]
+    },
+    {
+      "name": "Marriott PEK Airport",
+      "distanceFromAirportKm": 9.1,
+      "rating": 4.1,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    },
+    {
+      "name": "ibis PEK Airport",
+      "distanceFromAirportKm": 3.0,
+      "rating": 4.7,
+      "cuisinePreferences": [
+        "Continental",
+        "American"
+      ]
+    },
+    {
+      "name": "Radisson PEK Airport",
+      "distanceFromAirportKm": 5.0,
+      "rating": 4.8,
+      "cuisinePreferences": [
+        "Italian",
+        "Continental"
+      ]
+    },
+    {
+      "name": "Hyatt PEK Airport",
+      "distanceFromAirportKm": 6.5,
+      "rating": 4.3,
+      "cuisinePreferences": [
+        "Japanese",
+        "Local"
+      ]
+    }
+  ]
+}
