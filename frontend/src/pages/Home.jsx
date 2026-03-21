@@ -51,17 +51,45 @@ const Home = () => {
         try {
             const sourceParam = params.source ? `source=${params.source}&` : '';
             const destParam = params.destination ? `destination=${params.destination}&` : '';
+            
+            // For Round Trip, we need to fetch both ways
             const res = await fetch(`http://localhost:8000/api/flights/search/?${sourceParam}${destParam}`);
+            let data = [];
             if (res.ok) {
-                const data = await res.json();
-                setFlights(data);
-                if (passedParams) {
-                    setSearchParams(passedParams);
-                }
-                setTimeout(() => {
-                    document.getElementById('results-section')?.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
+                data = await res.json();
             }
+
+            if (params.journeyType === 'round_trip' && params.source && params.destination) {
+                const resRet = await fetch(`http://localhost:8000/api/flights/search/?source=${params.destination}&destination=${params.source}`);
+                if (resRet.ok) {
+                    const retData = await resRet.json();
+                    
+                    // Logic to pair flights - for now we just create simple packages
+                    // of outbound + return flights that are in order
+                    const packages = [];
+                    data.slice(0, 5).forEach((out, idx) => {
+                        const possibleReturn = retData.find(ret => new Date(ret.departure_time) > new Date(out.arrival_time));
+                        if (possibleReturn) {
+                            packages.push({
+                                type: 'PACKAGE',
+                                outbound: out,
+                                return: possibleReturn,
+                                id: `pkg-${out.id}-${possibleReturn.id}`
+                            });
+                        }
+                    });
+                    setFlights(packages);
+                }
+            } else {
+                setFlights(data);
+            }
+
+            if (passedParams) {
+                setSearchParams(passedParams);
+            }
+            setTimeout(() => {
+                document.getElementById('results-section')?.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
         } catch (err) {
             console.error(err);
         } finally {
@@ -78,8 +106,13 @@ const Home = () => {
         handleSearch(newParams);
     };
 
-    const handleSelectFlight = (flight) => {
-        setSelectedFlights([flight]);
+    const handleSelectFlight = (flightOrPkg) => {
+        if (flightOrPkg.type === 'PACKAGE') {
+            setSelectedFlights([flightOrPkg.outbound, flightOrPkg.return]);
+        } else {
+            setSelectedFlights([flightOrPkg]);
+        }
+        
         const dur = (new Date(searchParams.returnDate) - new Date(searchParams.departureDate)) / (1000 * 3600 * 24);
         if (searchParams.journeyType === 'round_trip' && dur > 1) {
             navigate('/recommendations');
@@ -108,9 +141,9 @@ const Home = () => {
     };
 
     const filteredAirports = airports.filter(a => 
-        a.name.toLowerCase().includes(searchValue.toLowerCase()) || 
-        a.code.toLowerCase().includes(searchValue.toLowerCase()) ||
-        a.city.toLowerCase().includes(searchValue.toLowerCase())
+        (a.name?.toLowerCase() || "").includes(searchValue.toLowerCase()) || 
+        (a.code?.toLowerCase() || "").includes(searchValue.toLowerCase()) ||
+        (a.city?.toLowerCase() || "").includes(searchValue.toLowerCase())
     );
 
     const groupedAirports = filteredAirports.reduce((acc, airport) => {
@@ -365,45 +398,109 @@ const Home = () => {
                 </div>
 
                 {/* Results Section */}
-                {flights.length > 0 && (
-                    <div id="results-section" className="mt-12 mb-20 animate-slide-up">
-                        <h2 className="text-3xl font-bold mb-8 text-white">Available Flights</h2>
-                        <div className="flex-col gap-6">
-                            {flights.map(flight => (
-                                <div key={flight.id} className="glass-panel p-8 flex flex-col md:flex-row justify-between items-center group">
+                <div id="results-section" className="mt-12 mb-20 animate-slide-up">
+                    <h2 className="text-3xl font-bold mb-8 text-white">
+                        {loading ? 'Searching Flights...' : flights.length > 0 ? 'Available Flights' : 'Find Your Adventure'}
+                    </h2>
+                    
+                    {!loading && flights.length === 0 && searchParams.source && searchParams.destination && (
+                        <div className="glass-panel p-12 text-center text-white/50">
+                            <Plane className="mx-auto mb-4 opacity-20" size={48} />
+                            <p className="text-xl">No flights found between these locations. Try a different route or dates.</p>
+                        </div>
+                    )}
+
+                    <div className="flex flex-col gap-6">
+                        {flights.map(item => (
+                            item.type === 'PACKAGE' ? (
+                                <div key={item.id} className="glass-panel p-8 group border-l-4 border-sky-500">
+                                    <div className="flex flex-col md:flex-row justify-between items-center">
+                                        <div className="flex-1 flex flex-col gap-8">
+                                            {/* Outbound */}
+                                            <div className="flex items-center gap-12">
+                                                <div className="w-16"><span className="text-xs uppercase text-sky-400 font-bold">Outbound</span></div>
+                                                <div className="text-center">
+                                                    <h3 className="text-3xl font-bold">{item.outbound.source?.code}</h3>
+                                                    <p className="text-muted">{new Date(item.outbound.departure_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                                                </div>
+                                                <div className="flex flex-col items-center gap-1 text-muted">
+                                                    <span className="text-xs uppercase">{item.outbound.flight_number}</span>
+                                                    <div className="w-24 h-[2px] bg-sky-500/30 relative">
+                                                        <Plane className="absolute top-[-8px] left-1/2 -translate-x-1/2 text-sky-500" size={16} />
+                                                    </div>
+                                                </div>
+                                                <div className="text-center">
+                                                    <h3 className="text-3xl font-bold">{item.outbound.destination?.code}</h3>
+                                                    <p className="text-muted">{new Date(item.outbound.arrival_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                                                </div>
+                                            </div>
+                                            {/* Return */}
+                                            <div className="flex items-center gap-12">
+                                                <div className="w-16"><span className="text-xs uppercase text-amber-400 font-bold">Return</span></div>
+                                                <div className="text-center">
+                                                    <h3 className="text-3xl font-bold">{item.return.source?.code}</h3>
+                                                    <p className="text-muted">{new Date(item.return.departure_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                                                </div>
+                                                <div className="flex flex-col items-center gap-1 text-muted">
+                                                    <span className="text-xs uppercase">{item.return.flight_number}</span>
+                                                    <div className="w-24 h-[2px] bg-amber-500/30 relative">
+                                                        <Plane className="absolute top-[-8px] left-1/2 -translate-x-1/2 text-amber-500 rotate-180" size={16} />
+                                                    </div>
+                                                </div>
+                                                <div className="text-center">
+                                                    <h3 className="text-3xl font-bold">{item.return.destination?.code}</h3>
+                                                    <p className="text-muted">{new Date(item.return.arrival_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-10 mt-6 md:mt-0 pt-6 md:pt-0 border-t md:border-t-0 border-white/10 w-full md:w-auto">
+                                            <div className="text-right flex-1">
+                                                <p className="text-sm text-muted">package total</p>
+                                                <p className="text-4xl font-bold text-sky-400">
+                                                    ${(searchParams.cabinClass === 'economy' ? (parseFloat(item.outbound.price_economy) + parseFloat(item.return.price_economy)) : (parseFloat(item.outbound.price_business) + parseFloat(item.return.price_business))).toFixed(2)}
+                                                </p>
+                                            </div>
+                                            <button className="btn-primary px-8 py-3 whitespace-nowrap" onClick={() => handleSelectFlight(item)}>
+                                                Book Package
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div key={item.id} className="glass-panel p-8 flex flex-col md:flex-row justify-between items-center group">
                                     <div className="flex items-center gap-12">
                                         <div className="text-center">
-                                            <h3 className="text-3xl font-bold">{flight.source?.code}</h3>
-                                            <p className="text-muted">{new Date(flight.departure_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                                            <h3 className="text-3xl font-bold">{item.source?.code}</h3>
+                                            <p className="text-muted">{new Date(item.departure_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
                                         </div>
                                         <div className="flex flex-col items-center gap-1 text-muted">
-                                            <span className="text-xs uppercase">{flight.flight_number}</span>
+                                            <span className="text-xs uppercase">{item.flight_number}</span>
                                             <div className="w-24 h-[2px] bg-sky-500/30 relative">
                                                 <Plane className="absolute top-[-8px] left-1/2 -translate-x-1/2 text-sky-500 group-hover:left-[90%] transition-all duration-1000" size={16} />
                                             </div>
                                             <span className="text-xs">Direct</span>
                                         </div>
                                         <div className="text-center">
-                                            <h3 className="text-3xl font-bold">{flight.destination?.code}</h3>
-                                            <p className="text-muted">{new Date(flight.arrival_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                                            <h3 className="text-3xl font-bold">{item.destination?.code}</h3>
+                                            <p className="text-muted">{new Date(item.arrival_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-10 mt-6 md:mt-0">
                                         <div className="text-right">
                                             <p className="text-sm text-muted">from</p>
                                             <p className="text-4xl font-bold text-sky-400">
-                                                ${searchParams.cabinClass === 'economy' ? flight.price_economy : flight.price_business}
+                                                ${searchParams.cabinClass === 'economy' ? item.price_economy : item.price_business}
                                             </p>
                                         </div>
-                                        <button className="btn-primary px-8 py-3" onClick={() => handleSelectFlight(flight)}>
+                                        <button className="btn-primary px-8 py-3" onClick={() => handleSelectFlight(item)}>
                                             Book Now
                                         </button>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
+                            )
+                        ))}
                     </div>
-                )}
+                </div>
             </div>
         </div>
     );

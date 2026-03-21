@@ -1,6 +1,8 @@
 import os
 import django
-from datetime import timedelta
+import json
+import random
+from datetime import timedelta, datetime
 from django.utils import timezone
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
@@ -9,71 +11,179 @@ django.setup()
 from flights.models import Airport, Flight
 from accommodations.models import Hotel
 from cabs.models import Cab
+from django.conf import settings
+
+def load_json(filename):
+    # JSON files are in the root directory, while seed.py is in backend
+    path = os.path.join(settings.BASE_DIR, '..', filename)
+    with open(path, 'r') as f:
+        return json.load(f)
 
 def run():
     print("Clearing old data...")
-    Airport.objects.all().delete()
     Flight.objects.all().delete()
+    Airport.objects.all().delete()
     Hotel.objects.all().delete()
     Cab.objects.all().delete()
 
+    # Load data
+    print("Loading JSON files...")
+    flights_data = load_json('flight_services.json')
+    hotels_map = load_json('hotels.json')
+    cabs_map = load_json('cab.json')
+
     now = timezone.now()
+    
+    # 1. Seed Airports
     print("Seeding airports...")
-    a1 = Airport.objects.create(code='JNB', name='O.R. Tambo International', city='Johannesburg', country='South Africa')
-    a2 = Airport.objects.create(code='CPT', name='Cape Town International', city='Cape Town', country='South Africa')
-    a3 = Airport.objects.create(code='LHR', name='Heathrow', city='London', country='UK')
-    a4 = Airport.objects.create(code='DXB', name='Dubai International', city='Dubai', country='UAE')
-    a5 = Airport.objects.create(code='JFK', name='John F. Kennedy', city='New York', country='USA')
+    airport_cache = {}
+    
+    def get_or_create_airport(ap_data):
+        code = ap_data['airportCode']
+        if code not in airport_cache:
+            # We don't have the full name in JSON, so we'll use city name + "International"
+            name = f"{ap_data['city']} International Airport"
+            airport, _ = Airport.objects.get_or_create(
+                code=code,
+                defaults={
+                    'name': name,
+                    'city': ap_data['city'],
+                    'country': ap_data['country']
+                }
+            )
+            airport_cache[code] = airport
+        return airport_cache[code]
 
+    for f_data in flights_data:
+        get_or_create_airport(f_data['origin'])
+        get_or_create_airport(f_data['destination'])
+
+    # 2. Seed Flights
     print("Seeding flights...")
-    now = timezone.now()
-    # JNB to CPT (Domestic)
-    Flight.objects.create(
-        flight_number='SL501', source=a1, destination=a2, departure_time=now + timedelta(days=1),
-        arrival_time=now + timedelta(days=1, hours=2), price_economy=80.00, price_business=200.00
-    )
-    # JNB to LHR (International)
-    Flight.objects.create(
-        flight_number='SL101', source=a1, destination=a3, departure_time=now + timedelta(days=2),
-        arrival_time=now + timedelta(days=2, hours=11), price_economy=650.00, price_business=1800.00
-    )
-    # CPT to JNB
-    Flight.objects.create(
-        flight_number='SL502', source=a2, destination=a1, departure_time=now + timedelta(days=3),
-        arrival_time=now + timedelta(days=3, hours=2), price_economy=75.00, price_business=190.00
-    )
-    # DXB to JNB
-    Flight.objects.create(
-        flight_number='SL301', source=a4, destination=a1, departure_time=now + timedelta(days=5),
-        arrival_time=now + timedelta(days=5, hours=8), price_economy=400.00, price_business=1200.00
-    )
-    # JFK to LHR
-    Flight.objects.create(
-        flight_number='SL102', source=a5, destination=a3, departure_time=now + timedelta(days=7),
-        arrival_time=now + timedelta(days=7, hours=7), price_economy=500.00, price_business=1300.00
-    )
+    for f_data in flights_data:
+        source = airport_cache[f_data['origin']['airportCode']]
+        dest = airport_cache[f_data['destination']['airportCode']]
+        duration_mins = f_data['flightDurationMinutes']
+        
+        # We'll generate flights for the next 7 days instead of 14, and 3 flights per day.
+        for day_offset in range(7):
+            flight_date = (now + timedelta(days=day_offset)).date()
+            
+            # 3 Flights per day: Morning, Afternoon, Evening
+            departure_hours = [7, 13, 19] 
+            
+            for i, hour in enumerate(departure_hours):
+                # --- OUTBOUND FLIGHT ---
+                dep_time_out = timezone.make_aware(datetime.combine(flight_date, datetime.min.time().replace(hour=hour, minute=random.randint(0, 59))))
+                arr_time_out = dep_time_out + timedelta(minutes=duration_mins)
+                
+                dist = f_data['distanceKm']
+                price_econ = dist * 0.12 + random.randint(10, 30)
+                price_biz = price_econ * 2.5 + random.randint(50, 150)
 
+                Flight.objects.create(
+                    flight_number=f"{f_data['id']}-OUT-{day_offset}-{i}",
+                    source=source,
+                    destination=dest,
+                    departure_time=dep_time_out,
+                    arrival_time=arr_time_out,
+                    price_economy=round(price_econ, 2),
+                    price_business=round(price_biz, 2)
+                )
+
+                # --- RETURN FLIGHT ---
+                # Return flight starts after outbound arrives, e.g. 4 hours later
+                dep_time_ret = arr_time_out + timedelta(hours=4, minutes=random.randint(0, 59))
+                arr_time_ret = dep_time_ret + timedelta(minutes=duration_mins)
+
+                Flight.objects.create(
+                    flight_number=f"{f_data['id']}-RET-{day_offset}-{i}",
+                    source=dest,
+                    destination=source,
+                    departure_time=dep_time_ret,
+                    arrival_time=arr_time_ret,
+                    price_economy=round(price_econ * 0.98, 2),
+                    price_business=round(price_biz * 0.98, 2)
+                )
+
+    # 2b. Add some missing routes for the UI deals if not present
+    jnb = airport_cache.get('JNB')
+    if jnb:
+        # 1. Domestic: CPT (Cape Town)
+        if 'CPT' not in airport_cache:
+            cpt, _ = Airport.objects.get_or_create(code='CPT', defaults={'name': 'Cape Town International', 'city': 'Cape Town', 'country': 'South Africa'})
+            print("Adding JNB <-> CPT flights...")
+            for day in range(7):
+                for i, hour in enumerate([8, 14, 20]):
+                    dep = timezone.make_aware(datetime.combine((now + timedelta(days=day)).date(), datetime.min.time().replace(hour=hour)))
+                    Flight.objects.create(flight_number=f"SA-DOM-{day}-{i}", source=jnb, destination=cpt, departure_time=dep, arrival_time=dep + timedelta(hours=2), price_economy=75.00, price_business=200.00)
+                    ret = dep + timedelta(hours=5)
+                    Flight.objects.create(flight_number=f"SA-RET-{day}-{i}", source=cpt, destination=jnb, departure_time=ret, arrival_time=ret + timedelta(hours=2), price_economy=70.00, price_business=190.00)
+        
+        # 2. Regional: DXB (Dubai)
+        dxb = airport_cache.get('DXB')
+        if dxb:
+            print("Adding JNB <-> DXB flights...")
+            for day in range(0, 7, 2):
+                for i, hour in enumerate([10, 22]):
+                    dep = timezone.make_aware(datetime.combine((now + timedelta(days=day)).date(), datetime.min.time().replace(hour=hour)))
+                    Flight.objects.create(flight_number=f"SA-DXB-{day}-{i}", source=jnb, destination=dxb, departure_time=dep, arrival_time=dep + timedelta(hours=8), price_economy=400.00, price_business=1200.00)
+                    ret = dep + timedelta(hours=14)
+                    Flight.objects.create(flight_number=f"SA-RET-DXB-{day}-{i}", source=dxb, destination=jnb, departure_time=ret, arrival_time=ret + timedelta(hours=8), price_economy=380.00, price_business=1100.00)
+
+        # 3. International: JFK (New York)
+        jfk = airport_cache.get('JFK')
+        if jfk:
+            print("Adding JNB <-> JFK flights...")
+            for day in range(0, 7, 3):
+                for i, hour in enumerate([21]):
+                    dep = timezone.make_aware(datetime.combine((now + timedelta(days=day)).date(), datetime.min.time().replace(hour=hour)))
+                    Flight.objects.create(flight_number=f"SA-JFK-{day}", source=jnb, destination=jfk, departure_time=dep, arrival_time=dep + timedelta(hours=16), price_economy=500.00, price_business=1500.00)
+                    ret = dep + timedelta(hours=24)
+                    Flight.objects.create(flight_number=f"SA-RET-JFK-{day}", source=jfk, destination=jnb, departure_time=ret, arrival_time=ret + timedelta(hours=16), price_economy=480.00, price_business=1400.00)
+
+    # 3. Seed Hotels
     print("Seeding hotels...")
-    Hotel.objects.create(name='Grand Plaza', city='London', rating=4.5, distance_from_airport=15.0, amenities=["WiFi", "Pool", "Spa"], price_per_night=350.00, hotel_type='luxury')
-    Hotel.objects.create(name='London Inn', city='London', rating=3.5, distance_from_airport=5.0, amenities=["WiFi", "Breakfast"], price_per_night=80.00, hotel_type='budget')
-    
-    Hotel.objects.create(name='Eiffel Views', city='Paris', rating=4.8, distance_from_airport=25.0, amenities=["WiFi", "Gym", "Spa"], price_per_night=450.00, hotel_type='luxury')
-    Hotel.objects.create(name='Hostel Paris', city='Paris', rating=3.8, distance_from_airport=10.0, amenities=["WiFi"], price_per_night=45.00, hotel_type='budget')
+    for airport_code, hotels_list in hotels_map.items():
+        if airport_code in airport_cache:
+            city = airport_cache[airport_code].city
+            for h_data in hotels_list:
+                rating = float(h_data.get('rating', 0))
+                # Generate a price based on rating
+                price = rating * 100 + random.randint(-50, 50)
+                hotel_type = 'luxury' if rating >= 4.0 else 'budget'
+                
+                Hotel.objects.create(
+                    name=h_data['name'],
+                    city=city,
+                    rating=rating,
+                    distance_from_airport=h_data.get('distanceFromAirportKm', 5.0),
+                    amenities=h_data.get('cuisinePreferences', []),
+                    price_per_night=round(price, 2),
+                    hotel_type=hotel_type
+                )
 
-    Hotel.objects.create(name='The Manhattan Gold', city='New York', rating=4.9, distance_from_airport=20.0, amenities=["WiFi", "Gym", "Pool"], price_per_night=550.00, hotel_type='luxury')
-    Hotel.objects.create(name='NYC Budget Stays', city='New York', rating=3.2, distance_from_airport=12.0, amenities=["WiFi"], price_per_night=90.00, hotel_type='budget')
-
+    # 4. Seed Cabs
     print("Seeding cabs...")
-    Cab.objects.create(driver_name='John Doe', vehicle_model='Mercedes S-Class', seating_capacity=4, cab_type='premium', rating=4.9, price_per_km=5.50, city='London')
-    Cab.objects.create(driver_name='Jane Smith', vehicle_model='Toyota Prius', seating_capacity=4, cab_type='standard', rating=4.5, price_per_km=2.00, city='London')
-    
-    Cab.objects.create(driver_name='Jacques', vehicle_model='BMW 7 Series', seating_capacity=4, cab_type='premium', rating=4.8, price_per_km=6.00, city='Paris')
-    Cab.objects.create(driver_name='Pierre', vehicle_model='Renault Zoe', seating_capacity=3, cab_type='standard', rating=4.2, price_per_km=1.80, city='Paris')
+    drivers = ["John Smith", "Maria Garcia", "David Chen", "Sarah Williams", "Ahmed Hassan", "Elena Popov"]
+    for airport_code, cabs_list in cabs_map.items():
+        if airport_code in airport_cache:
+            city = airport_cache[airport_code].city
+            for c_data in cabs_list:
+                rating = random.uniform(3.5, 5.0)
+                cab_type = 'premium' if float(c_data['farePerKmUsd']) > 3.0 else 'standard'
+                
+                Cab.objects.create(
+                    driver_name=random.choice(drivers),
+                    vehicle_model=c_data['cabName'],
+                    seating_capacity=c_data.get('maxPassengers', 4),
+                    cab_type=cab_type,
+                    rating=round(rating, 1),
+                    price_per_km=c_data['farePerKmUsd'],
+                    city=city
+                )
 
-    Cab.objects.create(driver_name='Mike Ross', vehicle_model='Cadillac Escalade', seating_capacity=6, cab_type='premium', rating=4.9, price_per_km=7.00, city='New York')
-    Cab.objects.create(driver_name='Harvey Specter', vehicle_model='Ford Crown Victoria', seating_capacity=4, cab_type='standard', rating=4.1, price_per_km=3.00, city='New York')
-
-    print("Done!")
+    print("Seeding complete!")
 
 if __name__ == '__main__':
     run()

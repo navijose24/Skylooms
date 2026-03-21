@@ -60,7 +60,7 @@ const Recommendations = () => {
                             <option value="budget" className="bg-gray-900">Budget</option>
                         </select>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
                         {filteredHotels.length === 0 ? <p className="text-muted">No hotels found for selected filter.</p> : filteredHotels.map((h, i) => {
                             const isSelected = selectedHotel?.id === h.id;
                             
@@ -141,7 +141,7 @@ const Recommendations = () => {
                             <option value="standard" className="bg-gray-900">Standard</option>
                         </select>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
                         {filteredCabs.length === 0 ? <p className="text-muted">No cabs found for selected filter.</p> : filteredCabs.map((c, i) => {
                             const isSelected = selectedCab?.id === c.id;
                             
