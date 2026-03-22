@@ -8,6 +8,45 @@ SkyLooms is a premium, full-stack airline booking platform. This report provides
 
 SkyLooms follows a classic **client-server architecture** using a modern tech stack.
 
+```mermaid
+graph TD
+    subgraph Frontend [Client - React + Vite]
+        UI[UI Components - React]
+        Router[React Router]
+        State[Context API - Auth/Booking]
+        Axios[Axios - API Services]
+    end
+
+    subgraph Backend [Server - Django + DRF]
+        API[REST API Endpoints]
+        Apps[Service Modules]
+        Auth[JWT Authentication]
+        
+        subgraph Modules [Application Modules]
+            F[Flights]
+            A[Accommodations]
+            C[Cabs]
+            B[Bookings]
+        end
+    end
+
+    subgraph Database [Storage - SQLite]
+        DB[(db.sqlite3)]
+    end
+
+    %% Interactions
+    UI --> Router
+    UI --> State
+    State --> Axios
+    Axios -- HTTP/REST --> API
+    API --> Auth
+    API --> Modules
+    F --> DB
+    A --> DB
+    C --> DB
+    B --> DB
+```
+
 ### **Frontend (React + Vite)**
 - **Framework**: React 19 with Vite for fast builds.
 - **Routing**: React Router 7 for seamless navigation.
