@@ -1,0 +1,7 @@
+# SkyMind AI Backend — Python/FastAPI
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite3
