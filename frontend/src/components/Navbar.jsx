@@ -57,6 +57,9 @@ const Navbar = () => {
                             
                             {isProfileOpen && (
                                 <div className="absolute right-0 mt-2 w-48 glass rounded-2xl border border-white/10 shadow-2xl py-2 z-50">
+                                    {user.role === 'admin' && (
+                                        <Link to="/admin" className="block px-4 py-2 text-sm text-emerald-400 font-medium hover:bg-white/5 transition-colors">Admin Dashboard</Link>
+                                    )}
                                     <Link to="/profile" className="block px-4 py-2 text-sm hover:bg-white/5 transition-colors">Profile Settings</Link>
                                     <button 
                                         onClick={logout}
@@ -85,6 +88,11 @@ const Navbar = () => {
                     <Link to="/explore" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>Explore</Link>
                     <hr className="mobile-nav-divider" />
                     <div className="mobile-nav-footer">
+                        {user?.role === 'admin' && (
+                            <Link to="/admin" className="mobile-nav-link flex items-center gap-2 text-emerald-400" onClick={() => setIsMenuOpen(false)}>
+                                <User size={18} /> Admin Dashboard
+                            </Link>
+                        )}
                         <Link to="/profile" className="mobile-nav-link flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
                             <User size={18} /> Profile
                         </Link>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Loader2, Plane, MapPin, Calendar, Users, ChevronDown, Repeat, X, ArrowLeft, Plus, Minus, Check } from 'lucide-react';
+import { Search, Loader2, Plane, MapPin, Calendar, Users, ChevronDown, Repeat, X, ArrowLeft, Plus, Minus, Check, AlertCircle } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
 
 const Home = () => {
@@ -22,7 +22,43 @@ const Home = () => {
         infants: 0
     });
 
+    const [seatStatus, setSeatStatus] = useState({});
+
     const navigate = useNavigate();
+
+    // Real-time polling for seat availability
+    useEffect(() => {
+        if (!flights || flights.length === 0) return;
+        
+        const fetchSeatData = async () => {
+            const ids = new Set();
+            flights.forEach(f => {
+                if (f.type === 'PACKAGE') {
+                    ids.add(f.outbound.id);
+                    ids.add(f.return.id);
+                } else {
+                    ids.add(f.id);
+                }
+            });
+            
+            if (ids.size === 0) return;
+            
+            try {
+                const res = await fetch(`http://localhost:8000/api/flights/seats/?ids=${Array.from(ids).join(',')}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    setSeatStatus(data);
+                }
+            } catch (err) {
+                console.error("Failed to poll seat data", err);
+            }
+        };
+
+        fetchSeatData();
+        const interval = setInterval(fetchSeatData, 3000);
+        
+        return () => clearInterval(interval);
+    }, [flights]);
 
     useEffect(() => {
         fetchAirports();
@@ -119,7 +155,7 @@ const Home = () => {
         if (searchParams.journeyType === 'round_trip' && dur > 1) {
             navigate('/recommendations');
         } else {
-            navigate('/checkout');
+            navigate('/seats');
         }
     };
 
@@ -423,7 +459,7 @@ const Home = () => {
                                                 <div className="w-16"><span className="text-xs uppercase text-sky-400 font-bold">Outbound</span></div>
                                                 <div className="text-center">
                                                     <h3 className="text-3xl font-bold">{item.outbound.source?.code}</h3>
-                                                    <p className="text-muted">{new Date(item.outbound.departure_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                                                    <p className="text-muted">{new Date(item.outbound.departure_time).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
                                                 </div>
                                                 <div className="flex flex-col items-center gap-1 text-muted">
                                                     <span className="text-xs uppercase">{item.outbound.flight_number}</span>
@@ -433,7 +469,7 @@ const Home = () => {
                                                 </div>
                                                 <div className="text-center">
                                                     <h3 className="text-3xl font-bold">{item.outbound.destination?.code}</h3>
-                                                    <p className="text-muted">{new Date(item.outbound.arrival_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                                                    <p className="text-muted">{new Date(item.outbound.arrival_time).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
                                                 </div>
                                             </div>
                                             {/* Return */}
@@ -441,7 +477,7 @@ const Home = () => {
                                                 <div className="w-16"><span className="text-xs uppercase text-amber-400 font-bold">Return</span></div>
                                                 <div className="text-center">
                                                     <h3 className="text-3xl font-bold">{item.return.source?.code}</h3>
-                                                    <p className="text-muted">{new Date(item.return.departure_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                                                    <p className="text-muted">{new Date(item.return.departure_time).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
                                                 </div>
                                                 <div className="flex flex-col items-center gap-1 text-muted">
                                                     <span className="text-xs uppercase">{item.return.flight_number}</span>
@@ -451,12 +487,24 @@ const Home = () => {
                                                 </div>
                                                 <div className="text-center">
                                                     <h3 className="text-3xl font-bold">{item.return.destination?.code}</h3>
-                                                    <p className="text-muted">{new Date(item.return.arrival_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                                                    <p className="text-muted">{new Date(item.return.arrival_time).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-10 mt-6 md:mt-0 pt-6 md:pt-0 border-t md:border-t-0 border-white/10 w-full md:w-auto">
                                             <div className="text-right flex-1">
+                                                <div className="flex flex-col items-end mb-2">
+                                                    {(seatStatus[item.outbound.id]?.seat_status === 'critical' || seatStatus[item.return.id]?.seat_status === 'critical') ? (
+                                                        <span className="flex items-center gap-1 text-red-500 font-bold bg-red-500/10 px-3 py-1 rounded-full text-xs animate-pulse">
+                                                            <AlertCircle size={14}/> 
+                                                            {Math.min(seatStatus[item.outbound.id]?.available_seats || 99, seatStatus[item.return.id]?.available_seats || 99)} seats left!
+                                                        </span>
+                                                    ) : (seatStatus[item.outbound.id]?.seat_status === 'low' || seatStatus[item.return.id]?.seat_status === 'low') ? (
+                                                        <span className="flex items-center gap-1 text-amber-500 font-bold bg-amber-500/10 px-3 py-1 rounded-full text-xs">
+                                                            <AlertCircle size={14}/> Fast filling
+                                                        </span>
+                                                    ) : null}
+                                                </div>
                                                 <p className="text-sm text-muted">package total</p>
                                                 <p className="text-4xl font-bold text-sky-400">
                                                     ${(searchParams.cabinClass === 'economy' ? (parseFloat(item.outbound.price_economy) + parseFloat(item.return.price_economy)) : (parseFloat(item.outbound.price_business) + parseFloat(item.return.price_business))).toFixed(2)}
@@ -473,7 +521,7 @@ const Home = () => {
                                     <div className="flex items-center gap-12">
                                         <div className="text-center">
                                             <h3 className="text-3xl font-bold">{item.source?.code}</h3>
-                                            <p className="text-muted">{new Date(item.departure_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                                            <p className="text-muted">{new Date(item.departure_time).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
                                         </div>
                                         <div className="flex flex-col items-center gap-1 text-muted">
                                             <span className="text-xs uppercase">{item.flight_number}</span>
@@ -484,11 +532,23 @@ const Home = () => {
                                         </div>
                                         <div className="text-center">
                                             <h3 className="text-3xl font-bold">{item.destination?.code}</h3>
-                                            <p className="text-muted">{new Date(item.arrival_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                                            <p className="text-muted">{new Date(item.arrival_time).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-10 mt-6 md:mt-0">
                                         <div className="text-right">
+                                            <div className="flex flex-col items-end mb-2">
+                                                {seatStatus[item.id]?.seat_status === 'critical' ? (
+                                                    <span className="flex items-center gap-1 text-red-500 font-bold bg-red-500/10 px-3 py-1 rounded-full text-xs animate-pulse">
+                                                        <AlertCircle size={14}/>
+                                                        Only {seatStatus[item.id]?.available_seats} seats left
+                                                    </span>
+                                                ) : seatStatus[item.id]?.seat_status === 'low' ? (
+                                                    <span className="flex items-center gap-1 text-amber-500 font-bold bg-amber-500/10 px-3 py-1 rounded-full text-xs">
+                                                        <AlertCircle size={14}/> Few seats remaining
+                                                    </span>
+                                                ) : null}
+                                            </div>
                                             <p className="text-sm text-muted">from</p>
                                             <p className="text-4xl font-bold text-sky-400">
                                                 ${searchParams.cabinClass === 'economy' ? item.price_economy : item.price_business}

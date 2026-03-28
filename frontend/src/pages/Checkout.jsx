@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { CreditCard, Loader2, User, HelpCircle, Baby, PawPrint } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
 
@@ -14,6 +14,8 @@ const Checkout = () => {
     );
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const allocatedSeats = location.state?.allocatedSeats || {};
 
     const totalPrice = useMemo(() => {
         let total = 0;
@@ -57,6 +59,7 @@ const Checkout = () => {
             cab: selectedCab?.id,
             total_price: totalPrice,
             status: 'confirmed',
+            allocated_seats: allocatedSeats,
             payment_id: 'PAY-' + Math.random().toString(36).substr(2, 9).toUpperCase()
         };
 

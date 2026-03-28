@@ -9,6 +9,8 @@ class AirportSerializer(serializers.ModelSerializer):
 class FlightSerializer(serializers.ModelSerializer):
     source = AirportSerializer()
     destination = AirportSerializer()
+    seat_status = serializers.ReadOnlyField()
+    seat_percentage = serializers.ReadOnlyField()
 
     class Meta:
         model = Flight

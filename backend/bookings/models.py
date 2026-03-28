@@ -50,6 +50,7 @@ class Booking(models.Model):
     reference_number = models.CharField(max_length=6, unique=True, null=True, blank=True)
     total_price = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
+    refund_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     payment_id = models.CharField(max_length=100, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 

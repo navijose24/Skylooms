@@ -37,7 +37,7 @@ const Recommendations = () => {
     const handleSkip = () => {
         setSelectedHotel(null);
         setSelectedCab(null);
-        navigate('/checkout');
+        navigate('/seats');
     };
 
     return (
@@ -51,8 +51,8 @@ const Recommendations = () => {
                 <button className="btn-ghost px-8 py-3 flex items-center gap-2" onClick={handleSkip}>
                     Skip <FastForward size={20} />
                 </button>
-                <button className="btn-ghost px-8 py-3 flex items-center gap-2" onClick={() => navigate('/checkout')}>
-                    Continue to Checkout <ArrowRight size={20} />
+                <button className="btn-ghost px-8 py-3 flex items-center gap-2" onClick={() => navigate('/seats')}>
+                    Continue to Seat Selection <ArrowRight size={20} />
                 </button>
             </div>
 

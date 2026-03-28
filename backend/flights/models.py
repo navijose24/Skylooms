@@ -18,11 +18,31 @@ class Flight(models.Model):
     price_economy = models.DecimalField(max_digits=10, decimal_places=2)
     price_business = models.DecimalField(max_digits=10, decimal_places=2)
     duration = models.DurationField(null=True, blank=True)
+    total_seats = models.IntegerField(default=180)
+    available_seats = models.IntegerField(default=180)
+    booked_seats = models.JSONField(default=list, blank=True)
 
     def save(self, *args, **kwargs):
         if self.departure_time and self.arrival_time:
             self.duration = self.arrival_time - self.departure_time
         super().save(*args, **kwargs)
+
+    @property
+    def seat_status(self):
+        """Returns urgency level based on available seats."""
+        if self.available_seats <= 3:
+            return 'critical'
+        elif self.available_seats <= 10:
+            return 'low'
+        elif self.available_seats <= 30:
+            return 'moderate'
+        return 'available'
+
+    @property
+    def seat_percentage(self):
+        if self.total_seats == 0:
+            return 0
+        return round((self.available_seats / self.total_seats) * 100)
 
     def __str__(self):
         return f"{self.flight_number} from {self.source.code} to {self.destination.code}"

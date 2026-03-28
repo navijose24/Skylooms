@@ -1,6 +1,14 @@
 import { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 
+const parseJwt = (token) => {
+    try {
+        return JSON.parse(atob(token.split('.')[1]));
+    } catch (e) {
+        return null;
+    }
+};
+
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
@@ -12,9 +20,13 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         const token = localStorage.getItem('access_token');
         if (token) {
-            // In a real app, you'd verify the token or fetch user info
-            // For now, we'll just set a dummy user if token exists
-            setUser({ username: 'User' }); 
+            const decoded = parseJwt(token);
+            if (decoded && decoded.exp * 1000 > Date.now()) {
+                setUser({ username: decoded.username, role: decoded.role });
+            } else {
+                localStorage.removeItem('access_token');
+                localStorage.removeItem('refresh_token');
+            }
         }
         setLoading(false);
     }, []);
@@ -25,9 +37,12 @@ export const AuthProvider = ({ children }) => {
                 username,
                 password
             });
-            localStorage.setItem('access_token', response.data.access);
+            const token = response.data.access;
+            localStorage.setItem('access_token', token);
             localStorage.setItem('refresh_token', response.data.refresh);
-            setUser({ username });
+            
+            const decoded = parseJwt(token);
+            setUser({ username: decoded?.username || username, role: decoded?.role || 'customer' });
             return { success: true };
         } catch (error) {
             return { success: false, error: error.response?.data?.detail || 'Login failed' };

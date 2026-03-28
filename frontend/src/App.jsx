@@ -9,6 +9,9 @@ import Status from './pages/Status';
 import Explore from './pages/Explore';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import SeatSelection from './pages/SeatSelection';
+import CancelBooking from './pages/CancelBooking';
+import AdminDashboard from './pages/AdminDashboard';
 import { BookingProvider } from './context/BookingContext';
 import { AuthProvider } from './context/AuthContext';
 import './index.css';
@@ -22,13 +25,16 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/recommendations" element={<Recommendations />} />
+            <Route path="/seats" element={<SeatSelection />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/success/:id" element={<Success />} />
+            <Route path="/cancel/:id" element={<CancelBooking />} />
             <Route path="/manage" element={<Manage />} />
             <Route path="/status" element={<Status />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </Router>
       </BookingProvider>

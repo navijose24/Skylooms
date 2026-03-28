@@ -1,4 +1,7 @@
 from rest_framework import generics
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 from .models import Flight, Airport
 from .serializers import FlightSerializer, AirportSerializer
 
@@ -23,3 +26,32 @@ class FlightSearch(generics.ListAPIView):
             queryset = queryset.filter(departure_time__date=date)
             
         return queryset
+
+
+class FlightSeatAvailabilityView(APIView):
+    """
+    GET /api/flights/seats/?ids=1,2,3
+    Returns live seat availability for a list of flight IDs.
+    Designed for real-time polling from the frontend.
+    """
+    def get(self, request):
+        ids_param = request.query_params.get('ids', '')
+        if not ids_param:
+            return Response({'error': 'Provide ?ids=1,2,3'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            ids = [int(i.strip()) for i in ids_param.split(',') if i.strip()]
+        except ValueError:
+            return Response({'error': 'Invalid IDs'}, status=status.HTTP_400_BAD_REQUEST)
+
+        flights = Flight.objects.filter(pk__in=ids)
+        data = {}
+        for f in flights:
+            data[f.id] = {
+                'available_seats': f.available_seats,
+                'total_seats': f.total_seats,
+                'seat_status': f.seat_status,
+                'seat_percentage': f.seat_percentage,
+                'booked_seats': f.booked_seats,
+            }
+        return Response(data)

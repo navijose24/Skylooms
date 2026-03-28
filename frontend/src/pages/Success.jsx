@@ -1,11 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { CheckCircle, Download, Home, Plane, Hotel, Car, Clock, Ticket } from 'lucide-react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
 const Success = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [booking, setBooking] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -76,6 +77,10 @@ const Success = () => {
         pdf.save(filename);
     };
 
+    const handleCancelClick = () => {
+        navigate(`/cancel/${id}`);
+    };
+
     if (loading) return <div className="container mt-8 text-center"><p>Finalizing your journey...</p></div>;
 
     const firstPassenger = booking?.passengers?.[0];
@@ -95,9 +100,19 @@ const Success = () => {
     return (
         <div className="container mt-8 animate-slide-up flex flex-col items-center pb-20">
             <div className="text-center mb-10">
-                <CheckCircle size={80} color="#22c55e" className="mb-6 mx-auto" />
-                <h1 className="text-4xl text-gradient mb-2">Booking Confirmed!</h1>
-                <p className="text-muted">Your journey with SkyLoom Airlines starts here. Reference: <strong>{booking?.reference_number}</strong></p>
+                {booking?.status === 'cancelled' ? (
+                    <>
+                        <div className="bg-red-500/20 text-red-500 p-4 rounded-full inline-block mb-6 mx-auto"><AlertCircle size={60}/></div>
+                        <h1 className="text-4xl text-gradient mb-2 text-red-500">Booking Cancelled</h1>
+                        <p className="text-muted">Your booking has been cancelled. Refund amount: ${booking?.refund_amount}</p>
+                    </>
+                ) : (
+                    <>
+                        <CheckCircle size={80} color="#22c55e" className="mb-6 mx-auto" />
+                        <h1 className="text-4xl text-gradient mb-2">Booking Confirmed!</h1>
+                        <p className="text-muted">Your journey with SkyLoom Airlines starts here. Reference: <strong>{booking?.reference_number}</strong></p>
+                    </>
+                )}
             </div>
 
             {booking?.passengers?.map((passenger, pIndex) => (
@@ -259,12 +274,19 @@ const Success = () => {
             )}
 
             <div className="ticket-action-buttons">
-                <button onClick={handleDownload} className="btn-ticket-primary">
-                    Download Ticket
-                </button>
+                {booking?.status !== 'cancelled' && (
+                    <button onClick={handleDownload} className="btn-ticket-primary">
+                        Download Ticket
+                    </button>
+                )}
                 <Link to="/" className="btn-ticket-outline flex items-center gap-2">
                     Other Plans
                 </Link>
+                {booking?.status !== 'cancelled' && (
+                    <button onClick={handleCancelClick} className="btn-ticket-outline flex items-center gap-2 border-red-500 text-red-500 hover:bg-red-500/10">
+                        Cancel Booking
+                    </button>
+                )}
             </div>
         </div>
     );

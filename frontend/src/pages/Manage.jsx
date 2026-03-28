@@ -7,6 +7,10 @@ const Manage = () => {
     const [lastName, setLastName] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const [cancelRef, setCancelRef] = useState('');
+    const [cancelLast, setCancelLast] = useState('');
+    const [cancelLoading, setCancelLoading] = useState(false);
+    const [cancelError, setCancelError] = useState('');
     const navigate = useNavigate();
 
     const handleFindBooking = async () => {
@@ -29,6 +33,29 @@ const Manage = () => {
             setError('Unable to reach the server. Please try again later.');
         } finally {
             setLoading(false);
+        }
+    };
+
+    const handleCancelSearch = async () => {
+        if (!cancelRef || !cancelLast) {
+            setCancelError('Please fill in both fields');
+            return;
+        }
+        setCancelLoading(true);
+        setCancelError('');
+        try {
+            const res = await fetch(`http://localhost:8000/api/bookings/search/?reference=${cancelRef}&last_name=${cancelLast}`);
+            if (res.ok) {
+                const data = await res.json();
+                navigate(`/cancel/${data.id}`);
+            } else {
+                const errData = await res.json();
+                setCancelError(errData.error || 'Booking not found. Please check your details.');
+            }
+        } catch (err) {
+            setCancelError('Unable to reach the server. Please try again later.');
+        } finally {
+            setCancelLoading(false);
         }
     };
 
@@ -101,6 +128,56 @@ const Manage = () => {
                                 disabled={loading}
                             >
                                 {loading ? <Loader2 className="animate-spin" /> : 'Find Booking'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="mt-16 glass-panel p-16 relative overflow-hidden border-t-2 border-red-500/20">
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-transparent pointer-events-none"></div>
+                <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-12">
+                    <div className="max-w-xl">
+                        <span className="text-red-400 font-bold tracking-widest text-xs uppercase mb-4 block">Cancellation Check</span>
+                        <h2 className="text-4xl font-bold mb-6">Cancel Your Booking</h2>
+                        <p className="text-muted text-lg leading-relaxed">Enter your 6-digit booking reference and surname to proceed with cancellation and view refund options.</p>
+                        
+                        {cancelError && (
+                            <div className="mt-6 flex items-center gap-2 text-red-400 bg-red-400/10 p-4 rounded-lg animate-shake">
+                                <AlertCircle size={18} />
+                                <span className="text-sm font-semibold">{cancelError}</span>
+                            </div>
+                        )}
+                    </div>
+                    
+                    <div className="flex-1 w-full flex flex-col sm:flex-row gap-6 items-end">
+                        <div className="flex flex-col flex-1">
+                            <label className="text-xs font-bold text-muted uppercase mb-3 block opacity-60">Reference Number</label>
+                            <input 
+                                type="text" 
+                                placeholder="e.g. SL7H3K" 
+                                className="input-field uppercase"
+                                value={cancelRef}
+                                onChange={(e) => setCancelRef(e.target.value)}
+                            />
+                        </div>
+                        <div className="flex flex-col flex-1">
+                            <label className="text-xs font-bold text-muted uppercase mb-3 block opacity-60">Last Name</label>
+                            <input 
+                                type="text" 
+                                placeholder="as on passport" 
+                                className="input-field"
+                                value={cancelLast}
+                                onChange={(e) => setCancelLast(e.target.value)}
+                            />
+                        </div>
+                        <div className="w-full sm:w-auto">
+                            <button 
+                                className="btn-primary w-full sm:w-[180px] h-[56px] rounded-xl shadow-lg shadow-red-500/20 flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700"
+                                onClick={handleCancelSearch}
+                                disabled={cancelLoading}
+                            >
+                                {cancelLoading ? <Loader2 className="animate-spin" /> : 'Cancel Booking'}
                             </button>
                         </div>
                     </div>
