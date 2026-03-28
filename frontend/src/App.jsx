@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import SkyMindChat from './components/SkyMindChat';
 import Home from './pages/Home';
 import Recommendations from './pages/Recommendations';
 import Checkout from './pages/Checkout';
@@ -48,6 +49,8 @@ function App() {
             <Route path="/admin/users" element={<AdminUsers />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
+          {/* SkyMind AI chatbot — floats on every page */}
+          <SkyMindChat />
         </Router>
       </BookingProvider>
     </AuthProvider>

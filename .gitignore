@@ -33,3 +33,11 @@ lerna-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# AI backend — ignore heavy/sensitive files
+ai_backend/venv/
+ai_backend/.venv/
+ai_backend/__pycache__/
+ai_backend/**/__pycache__/
+ai_backend/*.db
+ai_backend/.env
