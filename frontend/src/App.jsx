@@ -12,6 +12,12 @@ import Register from './pages/Register';
 import SeatSelection from './pages/SeatSelection';
 import CancelBooking from './pages/CancelBooking';
 import AdminDashboard from './pages/AdminDashboard';
+import AdminFlights from './pages/AdminFlights';
+import AdminHotels from './pages/AdminHotels';
+import AdminTransport from './pages/AdminTransport';
+import AdminBookings from './pages/AdminBookings';
+import AdminUsers from './pages/AdminUsers';
+import Profile from './pages/Profile';
 import { BookingProvider } from './context/BookingContext';
 import { AuthProvider } from './context/AuthContext';
 import './index.css';
@@ -35,6 +41,12 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/flights" element={<AdminFlights />} />
+            <Route path="/admin/hotels" element={<AdminHotels />} />
+            <Route path="/admin/transport" element={<AdminTransport />} />
+            <Route path="/admin/bookings" element={<AdminBookings />} />
+            <Route path="/admin/users" element={<AdminUsers />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </Router>
       </BookingProvider>

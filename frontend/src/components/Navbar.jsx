@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Plane, User, Moon, Sun, Menu, X, LogIn, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const Navbar = () => {
     const { user, logout } = useAuth();
+    const location = useLocation();
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -13,6 +14,8 @@ const Navbar = () => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
     }, [theme]);
+
+    if (location.pathname.startsWith('/admin')) return null;
 
     const toggleTheme = () => {
         setTheme(prev => prev === 'dark' ? 'light' : 'dark');

@@ -38,7 +38,16 @@ class AnalyticsDashboardView(APIView):
             
         total_bookings = Booking.objects.count()
         total_flights = Flight.objects.count()
-        total_revenue = Booking.objects.filter(status='confirmed').aggregate(Sum('total_price'))['total_price__sum'] or 0
+        
+        # Financial logic based on the most recent 10 transactions only
+        recent_ids = Booking.objects.order_by('-created_at')[:10].values_list('id', flat=True)
+        recent_queryset = Booking.objects.filter(id__in=list(recent_ids))
+        
+        gross_revenue = float(recent_queryset.aggregate(Sum('total_price'))['total_price__sum'] or 0)
+        total_refunds = float(recent_queryset.aggregate(Sum('refund_amount'))['refund_amount__sum'] or 0)
+        # Using the user's specific logic: Total - Refunds = Net
+        net_revenue = gross_revenue - total_refunds
+        
         total_hotels = Hotel.objects.count()
 
         recent_bookings = Booking.objects.order_by('-created_at')[:10].values(
@@ -48,7 +57,9 @@ class AnalyticsDashboardView(APIView):
         return Response({
             "total_bookings": total_bookings,
             "total_flights": total_flights,
-            "total_revenue": total_revenue,
+            "gross_revenue": gross_revenue,
+            "total_refunds": total_refunds,
+            "net_revenue": net_revenue,
             "total_hotels": total_hotels,
             "recent_bookings": list(recent_bookings),
         })

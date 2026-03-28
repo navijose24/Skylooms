@@ -21,6 +21,7 @@ from accommodations.views import RecommendationsView
 from bookings.views import BookingCreateView, BookingDetailView, BookingSearchView, download_ticket, BookingCancelView
 from rest_framework_simplejwt.views import TokenRefreshView
 from core.views import RegisterView, CustomTokenObtainPairView, AnalyticsDashboardView
+from core.admin_views import AdminFlightsView, AdminHotelsView, AdminTransportView, AdminBookingsView, AdminUsersView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,5 +41,10 @@ urlpatterns = [
     path('api/auth/login/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/admin/dashboard/', AnalyticsDashboardView.as_view(), name='analytics_dashboard'),
+    path('api/admin/flights/', AdminFlightsView.as_view(), name='admin_flights'),
+    path('api/admin/hotels/', AdminHotelsView.as_view(), name='admin_hotels'),
+    path('api/admin/transport/', AdminTransportView.as_view(), name='admin_transport'),
+    path('api/admin/bookings/', AdminBookingsView.as_view(), name='admin_bookings'),
+    path('api/admin/users/', AdminUsersView.as_view(), name='admin_users'),
 ]
 # trigger reload
