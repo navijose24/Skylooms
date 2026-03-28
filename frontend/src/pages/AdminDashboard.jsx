@@ -5,7 +5,7 @@ import { useNavigate, Navigate, Link } from 'react-router-dom';
 import { 
   LayoutDashboard, Users, Briefcase, FileText, Package, Database, 
   Wrench, FilePlus, ShoppingCart, Activity, FileCheck, CircleDollarSign,
-  Search, Bell, Plus, MoreVertical, Share2, User, MessageSquare, ExternalLink
+  Search, Bell, Plus, MoreVertical, Share2, User, MessageSquare, ExternalLink, Check, X
 } from 'lucide-react';
 import AdminLayout from '../components/AdminLayout';
 
@@ -16,14 +16,14 @@ const SidebarCategory = ({ label }) => (
 );
 
 const MetricCard = ({ title, value, icon: Icon, bgClass, textClass, path }) => (
-  <Link to={path || '#'} className={`${bgClass} rounded-xl p-5 shadow-sm text-white relative overflow-hidden flex flex-col justify-between hover:scale-[1.02] transition-transform duration-200 cursor-pointer`}>
+  <Link to={path || '#'} className={`${bgClass} rounded-xl p-6 shadow-md text-white relative overflow-hidden flex flex-col justify-between hover:scale-[1.03] transition-transform duration-200 cursor-pointer min-h-[130px]`}>
     <div className="flex justify-between items-start z-10">
       <div>
-        <p className="text-3xl font-bold mb-1">{value}</p>
-        <p className="uppercase text-xs font-semibold opacity-90 tracking-wider">{title}</p>
+        <p className="text-2xl font-bold mb-1 tracking-tight">{value}</p>
+        <p className="uppercase text-[9px] font-bold opacity-80 tracking-[0.15em]">{title}</p>
       </div>
-      <div className="bg-white/20 p-2 rounded-lg">
-        <Icon size={24} className="text-white opacity-90" />
+      <div className="bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+        <Icon size={24} className="text-white" />
       </div>
     </div>
     {/* Decorative circle */}
@@ -218,7 +218,8 @@ const AdminDashboard = () => {
                             <span className="text-gray-400 text-xs mt-0.5">Ref: {booking.reference_number}</span>
                           </div>
                         </td>
-                        <td className={`py-4 text-sm font-medium capitalize ${booking.status.toLowerCase() === 'confirmed' ? 'text-emerald-500' : booking.status.toLowerCase() === 'cancelled' ? 'text-red-500' : 'text-gray-500'}`}>
+                        <td className={`py-4 text-sm font-medium flex items-center gap-1 capitalize ${booking.status?.toLowerCase() === 'confirmed' ? 'text-emerald-500' : booking.status?.toLowerCase() === 'cancelled' ? 'text-red-500' : 'text-gray-500'}`}>
+                          {booking.status?.toLowerCase() === 'confirmed' ? <Check size={12}/> : booking.status?.toLowerCase() === 'cancelled' ? <X size={12}/> : null}
                           {booking.status}
                         </td>
                         <td className="py-4 text-right font-semibold text-gray-700 rounded-r-lg pr-2">${booking.total_price}</td>

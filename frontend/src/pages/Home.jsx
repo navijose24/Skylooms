@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Loader2, Plane, MapPin, Calendar, Users, ChevronDown, Repeat, X, ArrowLeft, Plus, Minus, Check, AlertCircle } from 'lucide-react';
+import { Search, Loader2, Plane, MapPin, Calendar, Users, ChevronDown, Repeat, X, ArrowLeft, Plus, Minus, Check, AlertCircle, Briefcase, Clock, Compass } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
 
 const Home = () => {
@@ -432,6 +432,39 @@ const Home = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+                
+                {/* Minimal Quick Access Sections */}
+                <div className="grid md:grid-cols-3 gap-8 mb-20 animate-slide-up">
+                    {/* Manage Section */}
+                    <div className="glass-panel p-8 flex flex-col items-center text-center group hover:border-sky-500/50 transition-all cursor-pointer" onClick={() => navigate('/manage')}>
+                        <div className="p-4 rounded-full bg-sky-500/10 text-sky-500 mb-6 group-hover:scale-110 transition-transform">
+                            <Briefcase size={32} />
+                        </div>
+                        <h3 className="text-2xl font-bold mb-3">Manage Trip</h3>
+                        <p className="text-muted mb-6">View, change, or upgrade your booking with your reference number.</p>
+                        <button className="btn-ghost px-6 py-2 mt-auto">Manage My Trip</button>
+                    </div>
+
+                    {/* Status Section */}
+                    <div className="glass-panel p-8 flex flex-col items-center text-center group hover:border-amber-500/50 transition-all cursor-pointer" onClick={() => navigate('/status')}>
+                        <div className="p-4 rounded-full bg-amber-500/10 text-amber-500 mb-6 group-hover:scale-110 transition-transform">
+                            <Clock size={32} />
+                        </div>
+                        <h3 className="text-2xl font-bold mb-3">Flight Status</h3>
+                        <p className="text-muted mb-6">Stay updated with real-time arrival and departure information.</p>
+                        <button className="btn-ghost px-6 py-2 mt-auto">Check Status</button>
+                    </div>
+
+                    {/* Explore Section */}
+                    <div className="glass-panel p-8 flex flex-col items-center text-center group hover:border-emerald-500/50 transition-all cursor-pointer" onClick={() => navigate('/explore')}>
+                        <div className="p-4 rounded-full bg-emerald-500/10 text-emerald-500 mb-6 group-hover:scale-110 transition-transform">
+                            <Compass size={32} />
+                        </div>
+                        <h3 className="text-2xl font-bold mb-3">Explore</h3>
+                        <p className="text-muted mb-6">Find inspiration for your next journey across the globe.</p>
+                        <button className="btn-ghost px-6 py-2 mt-auto">Discover More</button>
                     </div>
                 </div>
 

@@ -42,7 +42,7 @@ pip install -r requirements.txt
 
 # Create .env file with your keys
 # GROQ_API_KEY=your_key_here
-# JWT_SECRET=any_random_secret_32chars
+# JWT_SECRET=any_random_secret_32chars {python -c "import secrets; print(secrets.token_hex(32))"}
 
 # Start the server
 python -m uvicorn main:app --host 0.0.0.0 --port 8001 --reload

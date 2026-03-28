@@ -10,6 +10,21 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
 
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
@@ -26,7 +41,7 @@ const Navbar = () => {
     };
 
     return (
-        <header className="app-header">
+        <header className={`app-header ${scrolled ? 'scrolled' : ''}`}>
             <div className="header-container">
                 <Link to="/" className="nav-logo">Skylooms</Link>
 
@@ -36,6 +51,7 @@ const Navbar = () => {
                     <Link to="/manage" className="nav-link">Manage</Link>
                     <Link to="/status" className="nav-link">Status</Link>
                     <Link to="/explore" className="nav-link">Explore</Link>
+                    <Link to="/offers" className="nav-link">Offers</Link>
                 </nav>
 
                 <div className="flex items-center gap-4 md:gap-6">
@@ -89,6 +105,7 @@ const Navbar = () => {
                     <Link to="/manage" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>Manage</Link>
                     <Link to="/status" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>Status</Link>
                     <Link to="/explore" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>Explore</Link>
+                    <Link to="/offers" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>Offers</Link>
                     <hr className="mobile-nav-divider" />
                     <div className="mobile-nav-footer">
                         {user?.role === 'admin' && (

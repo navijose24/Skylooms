@@ -42,8 +42,9 @@ export const AuthProvider = ({ children }) => {
             localStorage.setItem('refresh_token', response.data.refresh);
             
             const decoded = parseJwt(token);
-            setUser({ username: decoded?.username || username, role: decoded?.role || 'customer' });
-            return { success: true };
+            const role = decoded?.role || 'customer';
+            setUser({ username: decoded?.username || username, role });
+            return { success: true, role };
         } catch (error) {
             return { success: false, error: error.response?.data?.detail || 'Login failed' };
         }

@@ -53,8 +53,8 @@ const AdminBookings = () => {
                     </td>
                     <td className="py-4 font-semibold">
                        <div className="flex flex-col gap-1">
-                          <span className={bkg.status === 'Confirmed' ? 'text-emerald-500 flex items-center gap-1 text-xs uppercase' : 'text-red-500 flex items-center gap-1 text-xs uppercase'}>
-                            {bkg.status === 'Confirmed' ? <Check size={12}/> : <X size={12}/>} {bkg.status}
+                          <span className={bkg.status?.toLowerCase() === 'confirmed' ? 'text-emerald-500 flex items-center gap-1 text-xs font-bold uppercase' : 'text-red-500 flex items-center gap-1 text-xs font-bold uppercase'}>
+                            {bkg.status?.toLowerCase() === 'confirmed' ? <Check size={12}/> : <X size={12}/>} {bkg.status}
                           </span>
                           <span className="text-gray-800 text-sm mt-1">{bkg.amount}</span>
                        </div>

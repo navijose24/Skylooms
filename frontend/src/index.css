@@ -475,9 +475,19 @@ select.text-main-color option {
   transition: all 0.5s ease;
 }
 
+.app-header.scrolled {
+  background: var(--navbar-bg);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border-bottom: 1px solid var(--glass-border);
+  height: 70px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
 .header-container {
   width: 100%;
   max-width: 1400px;
+  height: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
   display: flex;

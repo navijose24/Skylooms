@@ -19,6 +19,7 @@ import AdminTransport from './pages/AdminTransport';
 import AdminBookings from './pages/AdminBookings';
 import AdminUsers from './pages/AdminUsers';
 import Profile from './pages/Profile';
+import Offers from './pages/Offers';
 import { BookingProvider } from './context/BookingContext';
 import { AuthProvider } from './context/AuthContext';
 import './index.css';
@@ -48,6 +49,7 @@ function App() {
             <Route path="/admin/bookings" element={<AdminBookings />} />
             <Route path="/admin/users" element={<AdminUsers />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/offers" element={<Offers />} />
           </Routes>
           {/* SkyMind AI chatbot — floats on every page */}
           <SkyMindChat />
