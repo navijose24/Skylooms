@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from flights.views import FlightSearch, AirportList, FlightSeatAvailabilityView
+from flights.views import FlightSearch, AirportList, FlightSeatAvailabilityView, FlightStatusView
 from accommodations.views import RecommendationsView
 from bookings.views import BookingCreateView, BookingDetailView, BookingSearchView, download_ticket, BookingCancelView
 from rest_framework_simplejwt.views import TokenRefreshView
@@ -28,6 +28,7 @@ urlpatterns = [
     path('api/airports/', AirportList.as_view(), name='airport-list'),
     path('api/flights/search/', FlightSearch.as_view(), name='flight-search'),
     path('api/flights/seats/', FlightSeatAvailabilityView.as_view(), name='flight-seats'),
+    path('api/flights/status/', FlightStatusView.as_view(), name='flight-status'),
     # Existing search
     path('api/recommendations/', RecommendationsView.as_view(), name='recommendations'),
     path('api/bookings/', BookingCreateView.as_view(), name='booking-create'),

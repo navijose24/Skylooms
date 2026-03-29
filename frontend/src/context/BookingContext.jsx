@@ -10,8 +10,8 @@ export const BookingProvider = ({ children }) => {
         journeyType: 'round_trip',
         source: '',
         destination: '',
-        departureDate: '',
-        returnDate: '',
+        departureDate: new Date().toISOString().split('T')[0],
+        returnDate: new Date(Date.now() + 86400000).toISOString().split('T')[0],
         cabinClass: 'economy',
         passengers: 1
     });

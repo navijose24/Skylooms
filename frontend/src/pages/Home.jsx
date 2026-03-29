@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, Loader2, Plane, MapPin, Calendar, Users, ChevronDown, Repeat, X, ArrowLeft, Plus, Minus, Check, AlertCircle, Briefcase, Clock, Compass } from 'lucide-react';
 import { useBooking } from '../context/BookingContext';
+import HeroScroll from '../components/HeroScroll';
 
 const Home = () => {
     const { searchParams, setSearchParams, setDurationDays, setSelectedFlights } = useBooking();
@@ -207,9 +208,31 @@ const Home = () => {
 
     return (
         <div className="flex-col">
-            {/* Hero Section */}
-            <section className="hero" style={{ backgroundImage: 'url(/hero.png)' }}>
-            </section>
+            {/* Scroll-based Hero Section */}
+            <HeroScroll />
+
+            {/* Hero Banner Image */}
+            <div style={{ position: 'relative', width: '100%', maxHeight: '520px', overflow: 'hidden' }}>
+                <img
+                    src="/hero.png"
+                    alt="Skylooms Hero"
+                    style={{
+                        width: '100%',
+                        height: '520px',
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                        display: 'block',
+                    }}
+                />
+                <div style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: '120px',
+                    background: 'linear-gradient(to bottom, transparent, var(--bg-main))',
+                }} />
+            </div>
 
             <div className="container">
                 {/* Visual Search Card Trigger */}

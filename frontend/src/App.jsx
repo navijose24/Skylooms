@@ -20,6 +20,14 @@ import AdminBookings from './pages/AdminBookings';
 import AdminUsers from './pages/AdminUsers';
 import Profile from './pages/Profile';
 import Offers from './pages/Offers';
+import Skylooms from './pages/Skylooms';
+import Booking from './pages/Booking';
+import GroupBookings from './pages/GroupBookings';
+import Cargo from './pages/Cargo';
+import Hotels from './pages/Hotels';
+import Sightseeing from './pages/Sightseeing';
+import Experiences from './pages/Experiences';
+import FlightDetails from './pages/FlightDetails';
 import { BookingProvider } from './context/BookingContext';
 import { AuthProvider } from './context/AuthContext';
 import './index.css';
@@ -31,7 +39,8 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Skylooms />} />
+            <Route path="/book" element={<Booking />} />
             <Route path="/recommendations" element={<Recommendations />} />
             <Route path="/seats" element={<SeatSelection />} />
             <Route path="/checkout" element={<Checkout />} />
@@ -39,6 +48,7 @@ function App() {
             <Route path="/cancel/:id" element={<CancelBooking />} />
             <Route path="/manage" element={<Manage />} />
             <Route path="/status" element={<Status />} />
+            <Route path="/flight/:flightId" element={<FlightDetails />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -50,6 +60,12 @@ function App() {
             <Route path="/admin/users" element={<AdminUsers />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/offers" element={<Offers />} />
+            {/* New Book & Marketplace Pages */}
+            <Route path="/group-bookings" element={<GroupBookings />} />
+            <Route path="/cargo" element={<Cargo />} />
+            <Route path="/hotels" element={<Hotels />} />
+            <Route path="/sightseeing" element={<Sightseeing />} />
+            <Route path="/experiences" element={<Experiences />} />
           </Routes>
           {/* SkyMind AI chatbot — floats on every page */}
           <SkyMindChat />

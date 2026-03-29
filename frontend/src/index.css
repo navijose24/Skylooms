@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+.font-bebas { font-family: 'Bebas Neue', Impact, sans-serif; }
+.font-cormorant { font-family: 'Cormorant Garamond', Georgia, serif; }
 
 :root {
   /* Night Theme - DEFAULT */
@@ -378,12 +383,17 @@ select.text-main-color option {
 .bg-sky-500\/30 { background: rgba(14, 165, 233, 0.3); }
 .bg-sky-500\/20 { background: rgba(14, 165, 233, 0.2); }
 .bg-sky-500\/40:hover { background: rgba(14, 165, 233, 0.4); }
+.bg-sky-500 { background-color: var(--primary); }
+.hover\:bg-sky-600:hover { background-color: var(--primary-dark); }
+.bg-transparent { background-color: transparent !important; }
 .text-sky-500 { color: var(--primary); }
 .text-sky-400 { color: var(--primary); }
 .text-red-500 { color: #ef4444; }
 .text-red-600 { color: #dc2626; }
 .border-white\/5 { border-color: rgba(255, 255, 255, 0.05); }
 .border-white\/10 { border-color: rgba(255, 255, 255, 0.1); }
+.border-white\/20 { border-color: rgba(255, 255, 255, 0.2); }
+.border-gray-200\/20 { border-color: rgba(229, 231, 235, 0.2); }
 .border-red-500 { border-color: #ef4444; }
 .border-blue-500 { border-color: #3b82f6; }
 .focus\:border-blue-500\/50:focus { border-color: rgba(59, 130, 246, 0.5); }

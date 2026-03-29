@@ -1,8 +1,25 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Search, Plane, Clock, MapPin, Loader2, ArrowRight } from 'lucide-react';
 
 const Status = () => {
+    const navigate = useNavigate();
     const [searchType, setSearchType] = useState('route');
+    const [origin, setOrigin] = useState('');
+    const [destination, setDestination] = useState('');
+    const [flightNo, setFlightNo] = useState('');
+
+    const handleCheckStatus = () => {
+        let query = '';
+        if (searchType === 'route') {
+            if (!origin || !destination) return;
+            query = `${origin.toUpperCase()}-${destination.toUpperCase()}`;
+        } else {
+            if (!flightNo) return;
+            query = flightNo.toUpperCase();
+        }
+        navigate(`/flight/${query}`);
+    };
 
     return (
         <div className="container py-20 animate-slide-up">
@@ -27,24 +44,28 @@ const Status = () => {
                         <>
                             <div className="flex-1">
                                 <label className="block text-xs uppercase font-bold text-muted mb-2 ml-1">From</label>
-                                <input type="text" placeholder="Origin Airport" className="input-field" />
+                                <input type="text" placeholder="Origin (e.g. LHR)" value={origin} onChange={(e) => setOrigin(e.target.value)} className="input-field" />
                             </div>
                             <div className="flex-1">
                                 <label className="block text-xs uppercase font-bold text-muted mb-2 ml-1">To</label>
-                                <input type="text" placeholder="Destination Airport" className="input-field" />
+                                <input type="text" placeholder="Destination (e.g. JNB)" value={destination} onChange={(e) => setDestination(e.target.value)} className="input-field" />
                             </div>
                         </>
                     ) : (
                         <div className="flex-1">
                             <label className="block text-xs uppercase font-bold text-muted mb-2 ml-1">Flight Number</label>
-                            <input type="text" placeholder="e.g. SL743" className="input-field" />
+                            <input type="text" placeholder="e.g. SL743" value={flightNo} onChange={(e) => setFlightNo(e.target.value)} className="input-field" />
                         </div>
                     )}
                     <div className="flex-shrink-0">
                          <label className="block text-xs uppercase font-bold text-muted mb-2 ml-1">Departure Date</label>
                         <input type="date" className="input-field min-w-[200px]" defaultValue={new Date().toISOString().split('T')[0]} />
                     </div>
-                    <button className="btn-primary mt-6 md:mt-0 flex items-center justify-center gap-2 px-10 self-end h-[50px]">
+                    <button 
+                        className="btn-primary mt-6 md:mt-0 flex items-center justify-center gap-2 px-10 self-end h-[50px] disabled:opacity-50"
+                        onClick={handleCheckStatus}
+                        disabled={searchType === 'route' ? (!origin || !destination) : !flightNo}
+                    >
                         <Search size={18}/> Check Status
                     </button>
                 </div>
@@ -120,7 +141,10 @@ const Status = () => {
                                         <span className="text-main-color font-bold italic">850 km/h</span>
                                     </div>
                                 </div>
-                                <button className="btn-primary w-full mt-8 flex items-center justify-center gap-2 group/btn py-4">
+                                <button 
+                                    className="btn-primary w-full mt-8 flex items-center justify-center gap-2 group/btn py-4"
+                                    onClick={() => navigate(`/flight/${f.id}`)}
+                                >
                                     Flight Details
                                     <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                                 </button>
