@@ -1,5 +1,9 @@
 #!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
+"""
+manage.py — Django CLI entry point.
+Usage: python manage.py runserver | migrate | createsuperuser | shell
+Sets DJANGO_SETTINGS_MODULE to config.settings and delegates to Django's management commands.
+"""
 import os
 import sys
 

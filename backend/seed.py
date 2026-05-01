@@ -1,3 +1,9 @@
+# seed.py — Database seeder for the Django backend.
+# Run with: python seed.py (from the backend/ directory)
+# Workflow: Clears existing Flights/Airports/Hotels/Cabs → loads data from JSON files
+# (flight_services.json, hotels.json, cab.json at project root) → inserts 14-day flight
+# schedules (morning + evening per route), hotels per city, and cab options per airport.
+
 import os
 import django
 import json

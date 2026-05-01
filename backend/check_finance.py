@@ -1,3 +1,7 @@
+# check_finance.py — Financial summary script.
+# Run with: python check_finance.py (must be executed inside Django shell context or after setup)
+# Prints gross revenue, refunds, confirmed/cancelled totals, and net revenue from the Bookings table.
+
 from bookings.models import Booking
 from django.db.models import Sum
 

@@ -142,9 +142,9 @@ const Skylooms = () => {
                         {activeFeature === 'BOOKING' && (
                             <div className="space-y-6 md:space-y-8">
                                 <p className="text-lg md:text-xl text-muted">Find the best deals on flights across the world.</p>
-                                <div className="flex flex-col md:flex-row gap-4">
+                                <div className="flex flex-col md:flex-row gap-4 relative" style={{ zIndex: 50 }}>
                                     {/* Departure Selection */}
-                                    <div className="flex-1 relative">
+                                    <div className="flex-1 relative" style={{ zIndex: isSourceOpen ? 100 : 10 }}>
                                         <div 
                                             className="bg-white/5 rounded-2xl p-4 border border-[var(--glass-border)] text-left cursor-pointer hover:bg-white/10 transition group"
                                             onClick={() => { setIsSourceOpen(!isSourceOpen); setIsDestOpen(false); }}
@@ -153,7 +153,7 @@ const Skylooms = () => {
                                             <span className="text-xl md:text-2xl font-bold text-main-color">{searchParams.source || 'Select Origin'}</span>
                                         </div>
                                         {isSourceOpen && (
-                                            <div className="absolute top-full left-0 right-0 mt-2 bg-[var(--bg-accent)] border border-[var(--glass-border)] rounded-2xl shadow-2xl z-50 max-h-64 overflow-y-auto p-2 scrollbar-hide animate-slide-up">
+                                            <div className="absolute top-full left-0 right-0 mt-2 border rounded-2xl shadow-2xl max-h-64 overflow-y-auto p-2 scrollbar-hide animate-slide-up" style={{ zIndex: 999, backgroundColor: 'var(--bg-accent)', borderColor: 'var(--glass-border)' }}>
                                                 <input 
                                                     autoFocus
                                                     className="w-full bg-white/5 border-b border-[var(--glass-border)] p-3 mb-2 outline-none text-sm rounded-xl focus:bg-white/10 text-main-color"
@@ -175,7 +175,7 @@ const Skylooms = () => {
                                     </div>
 
                                     {/* Destination Selection */}
-                                    <div className="flex-1 relative">
+                                    <div className="flex-1 relative" style={{ zIndex: isDestOpen ? 100 : 10 }}>
                                         <div 
                                             className="bg-white/5 rounded-2xl p-4 border border-[var(--glass-border)] text-left cursor-pointer hover:bg-white/10 transition group"
                                             onClick={() => { setIsDestOpen(!isDestOpen); setIsSourceOpen(false); }}
@@ -184,7 +184,7 @@ const Skylooms = () => {
                                             <span className="text-xl md:text-2xl font-bold text-main-color">{searchParams.destination || 'Search Destination'}</span>
                                         </div>
                                         {isDestOpen && (
-                                            <div className="absolute top-full left-0 right-0 mt-2 bg-[var(--bg-accent)] border border-[var(--glass-border)] rounded-2xl shadow-2xl z-50 max-h-64 overflow-y-auto p-2 scrollbar-hide animate-slide-up">
+                                            <div className="absolute top-full left-0 right-0 mt-2 border rounded-2xl shadow-2xl max-h-64 overflow-y-auto p-2 scrollbar-hide animate-slide-up" style={{ zIndex: 999, backgroundColor: 'var(--bg-accent)', borderColor: 'var(--glass-border)' }}>
                                                 <input 
                                                     autoFocus
                                                     className="w-full bg-white/5 border-b border-[var(--glass-border)] p-3 mb-2 outline-none text-sm rounded-xl focus:bg-white/10 text-main-color"
@@ -206,7 +206,8 @@ const Skylooms = () => {
                                     </div>
                                 </div>
                                 <button 
-                                    className="btn-primary px-12 py-4 rounded-full text-lg w-full md:w-auto shadow-2xl shadow-sky-500/20 active:scale-95 transition-all" 
+                                    className="btn-primary px-12 py-4 rounded-full text-lg w-full md:w-auto shadow-2xl shadow-sky-500/20 active:scale-95 transition-all relative"
+                                    style={{ zIndex: 0 }}
                                     onClick={() => navigate('/book')}
                                 >
                                     Search Flights Now

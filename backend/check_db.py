@@ -1,3 +1,7 @@
+# check_db.py — Quick DB diagnostic script.
+# Run with: python check_db.py (from the backend/ directory)
+# Prints total bookings, confirmed revenue, number of flights, and hotels in the SQLite DB.
+
 import os
 import django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')

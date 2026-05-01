@@ -201,7 +201,11 @@ const Success = () => {
                                         </div>
                                         <div className="ticket-seat-box">
                                             <div className="ticket-detail-label">Seat</div>
-                                            <div className="ticket-detail-value">{fIndex + 12}{['A', 'B', 'C', 'D', 'E', 'F'][pIndex % 6]}</div>
+                                            <div className="ticket-detail-value">
+                                                {booking?.allocated_seats && booking.allocated_seats[flight.id] && booking.allocated_seats[flight.id][pIndex] 
+                                                    ? booking.allocated_seats[flight.id][pIndex] 
+                                                    : `${fIndex + 12}${['A', 'B', 'C', 'D', 'E', 'F'][pIndex % 6]}`}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -52,6 +52,7 @@ class Booking(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     refund_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     payment_id = models.CharField(max_length=100, blank=True, null=True)
+    allocated_seats = models.JSONField(default=dict, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
